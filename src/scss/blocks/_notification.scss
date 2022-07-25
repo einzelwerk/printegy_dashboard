@@ -1,0 +1,35 @@
+.notification {
+  position: relative;
+  padding: 15px 20px 15px 39px;
+  border-radius: 3px;
+  font-family: $f-Manrope-Regular;
+  font-size: 15px;
+  line-height: 22px;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &--green {
+    color: #29b851;
+    background: #d4f8de;
+    border: 1px solid #29b851;
+    &:before {
+      background-image: url('./img/notification-mark.svg');
+    }
+  }
+  &--red {
+    color: #ed0a34;
+    background: #feebef;
+    border: 1px solid #ed0a34;
+    &:before {
+      background-image: url('./img/notification-cross.svg');
+    }
+  }
+}

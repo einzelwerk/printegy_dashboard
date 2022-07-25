@@ -1,0 +1,35 @@
+.language-drop {
+  position: relative;
+  &__main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-right: 13.5px;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 7px;
+      height: 4px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('./img/lang-arr.svg');
+    }
+  }
+  &__title {
+    font-family: $f-Manrope-Regular;
+    font-size: 13px;
+    line-height: 20px;
+    color: #313133;
+  }
+  &__pic {
+    width: 23px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  &__list {
+    display: none;
+    //   TODO
+  }
+}

@@ -1,0 +1,18 @@
+mixin product_thumb(className)
+	.thumb__elem(style="display:none" class=className)
+		.__top
+			img(src="./img/productpopupimg-sm.png" width="210" height="210" alt="")
+		.__desc
+			h3.title Stanley/Stella Blaster T-Shirt
+			.__color__choise
+				each color in ['#CA2230', "#62625F", "#717C58", "#E37878", "#E8E8E8", "#092149", "#49945E", "#3A4FAF", "#F6EF4F", "#4FF6CE"]
+					.colorpic(style=`background:${color}` data-colorpic="")
+
+mixin product_thumb-ph
+	.thumb__elem.ph-item
+		.ph-col-12
+			.thumb__elem__top
+				.ph-picture
+			.thumb__elem__desc.ph-row
+				.ph-line.title.ph-col-10
+				.ph-line.title.ph-col-10

@@ -1,0 +1,16 @@
+extends core/_dashboard-template-thirststep
+include mixins/smallbtn
+
+block title
+    title Главная
+
+block sideblock
+    include content/sidebar-design
+
+
+block scripts
+    script(src="js/loader.js")
+    script(src="js/dashboardproducts.js")
+    script(src="js/nouislider.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/wnumb/1.1.0/wNumb.js")
+    script(src="js/nouislidersetting.js")

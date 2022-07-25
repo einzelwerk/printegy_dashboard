@@ -1,0 +1,168 @@
+.branding-card {
+  background-color: #fff;
+  padding: 24px;
+  height: 100%;
+  position: relative;
+  border-radius: 4px;
+  height: 100%;
+  overflow: hidden;
+  &--pic {
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 222px;
+      height: 205px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('./img/branding-card-pic.svg');
+      pointer-events: none;
+    }
+  }
+  &__row {
+    display: flex;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  &__num {
+    font-family: $f-Manrope-SemiBold;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: right;
+    color: #0e86f4;
+    margin-bottom: 8px;
+  }
+  &__pic {
+    flex-shrink: 0;
+    margin-right: 16px;
+    width: 40%;
+    max-width: 272px;
+    margin-bottom: -15px;
+    @media screen and (min-width: 1280px) {
+      width: 50%;
+      margin-right: 32px;
+    }
+    &-img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    &--short {
+      max-width: 300px;
+    }
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 28px;
+    color: #19191a;
+    font-family: $f-Manrope-SemiBold;
+    margin-bottom: 8px;
+  }
+  &__text {
+    font-family: $f-Manrope-Regular;
+    font-size: 15px;
+    line-height: 22px;
+    color: #373737;
+    margin-bottom: 16px;
+  }
+  &__link {
+    color: #0e86f4;
+    transition: color 0.3s;
+    &:hover {
+      color: lighten(#0e86f4, 5%);
+    }
+  }
+  &__btn {
+    margin-top: 16px;
+  }
+  &__line {
+    margin-bottom: 22px;
+    position: relative;
+    padding-top: 22px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__label {
+    font-family: $f-Manrope-Regular;
+    font-size: 12px;
+    line-height: 14px;
+    color: #919399;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+  // TODO узнать насчет цвета лейблов и как они меняются
+  &__textarea {
+    height: 144px;
+    resize: none;
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid rgba(1, 24, 46, 0.12);
+    transition: color 0.3s, border-color 0.3s;
+    font-family: $f-Manrope-Regular;
+    font-size: 14px;
+    line-height: 20px;
+    color: #19191a;
+    padding: 9px 13px;
+    &:active,
+    &:focus,
+    &:hover {
+      border: 1px solid rgba(1, 24, 46, 0.32);
+      & + .branding-card__label {
+        color: #19191a;
+      }
+    }
+    &:not(:placeholder-shown) {
+      & + .branding-card__label {
+        color: #19191a;
+      }
+    }
+  }
+  &__input {
+    background: #ffffff;
+    border: 1px solid rgba(1, 24, 46, 0.12);
+    border-radius: 3px;
+    padding: 9px 13px;
+    display: block;
+    width: 100%;
+    transition: color 0.3s, border-color 0.3s;
+    font-family: $f-Manrope-Regular;
+    font-size: 14px;
+    line-height: 20px;
+    color: #19191a;
+    &:active,
+    &:focus,
+    &:hover {
+      border: 1px solid rgba(1, 24, 46, 0.32);
+      & + .branding-card__label {
+        color: #19191a;
+      }
+    }
+    &:not(:placeholder-shown) {
+      & + .branding-card__label {
+        color: #19191a;
+      }
+    }
+    &.is-invalid {
+      border-color: #ed0a34;
+    }
+  }
+  &__count {
+    font-family: $f-Manrope-Regular;
+    font-size: 12px;
+    line-height: 14px;
+    color: #aaadb3;
+    margin-top: 8px;
+  }
+}

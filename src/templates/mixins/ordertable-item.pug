@@ -1,0 +1,8 @@
+mixin ordertable__item(order, date, customer, status, statusClass, profit)
+    .ordespage__table__order
+        .order__shop GOTTESSHIRT
+        .order__order= order
+        .order__date= date
+        .order__customer= customer
+        .order__status(class=statusClass)= status
+        .order__profit= profit

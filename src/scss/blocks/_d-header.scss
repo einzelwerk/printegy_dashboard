@@ -1,0 +1,25 @@
+.d-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e1e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  &__controls {
+    display: flex;
+    align-items: center;
+    &-item {
+      margin-right: 33px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__alarm {
+    cursor: pointer;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-image: url('./img/icon-bell.svg');
+  }
+}

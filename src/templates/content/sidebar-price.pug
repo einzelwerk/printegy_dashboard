@@ -1,0 +1,117 @@
+.dashboard__product__popup-content__review__sideblock.back-grey.pricepage
+    .tabs
+        a(href="").tab Product Design
+        a(href="").tab Settings & Variants
+        a(href="").tab.active Shipping & Pricing
+
+    .dashboard__product__popup-content__shipping-pricing__table__wrapper.back-white
+        p.desc.p13-400 Shipping
+        .dashboard__product__popup-content__shipping-pricing__table
+            .table__item
+                .name Destination
+                .cselect#contacts-theme-country.dr__el
+                    select#filter-select-country(name="country" style="display:none")
+                        option(value='en')
+                        option(value='de')
+                        option(value='ua')
+                    .__title.dr__el-btn
+                        span USA
+                    .__content.dr__el-block
+                        div(data-value="en").cselect__label
+                            span USA
+                        div(data-value="de").cselect__label
+                            span Germany
+                        div(data-value="de").cselect__label
+                            span Ukraine
+            .table__item
+                .name Mail Courier
+                .value USPS
+            .table__item
+                .name Cost (ex GST 20%)
+                .value €4.79
+            .table__item
+                .name Additional piece cost (ex GST 20%)
+                .value €1.74
+            .table__item
+                .name Tracked
+                .value Yes
+            .table__item
+                .name Delivery Time
+                .value 7-11 days
+
+    .dashboard__product__popup-content__shipping-pricing__table__wrapper.back-grey
+
+        .dashboard__product__popup-content__header.pricetable__event
+            .desc Pricing
+            .pricetablebtn
+                <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 3.5C3 3.5 1 8 1 8C1 8 3 12.5 8 12.5C13 12.5 15 8 15 8C15 8 13 3.5 8 3.5Z" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 10.5C9.38071 10.5 10.5 9.38071 10.5 8C10.5 6.61929 9.38071 5.5 8 5.5C6.61929 5.5 5.5 6.61929 5.5 8C5.5 9.38071 6.61929 10.5 8 10.5Z" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                p.p13-600.text Price Variants
+                .pricetable__event__table
+                    p.p14-600.title Price Variants
+                    .table
+                        .__trow
+                            .head Color
+                            .value Red
+                            .value Red
+                            .value Light Blue
+                        .__trow
+                            .head Size
+                            .value XS
+                            .value S
+                            .value M
+                        .__trow
+                            .head Wholesale
+                            .value € 19,55
+                            .value € 19,55
+                            .value € 19,55
+                        .__trow
+                            .head Retail price
+                            .value € 25,99
+                            .value € 25,99
+                            .value € 25,99
+                        .__trow
+                            .head Profit
+                            .value € 6,44
+                            .value € 6,44
+                            .value € 6,44
+        .dashboard__product__popup-content__shipping-pricing__table
+            .table__item
+                .name Frontside Price
+                .select €17.47
+            .table__item
+                .name Backside Price
+                .value €0
+            .table__item
+                .name Tax (20%)
+                .value €3.49
+            .table__item
+                .name Markup
+                .cselect#contacts-theme-markup.dr__el.euro
+                    select#filter-select-markup(name="markup" style="display:none")
+                        option(value='1')
+                        option(value='2')
+                        option(value='3')
+                        option(value='4')
+                    .__title.dr__el-btn 1
+                    .__content.dr__el-block
+                        div(data-value="1").cselect__label
+                            span 1
+                        div(data-value="2").cselect__label
+                            span 2
+                        div(data-value="3").cselect__label
+                            span 3
+                        div(data-value="4").cselect__label
+                            span 4
+
+            .table__item
+                .name Retail Price
+                .value €27.99
+            .table__item
+                .name Profit
+                .value €7.03
+    .dashboard__product__popup-content__save-btns
+        button(type="button").btn.-blue.-medium Save Product
+        .btn-cancel Cancel

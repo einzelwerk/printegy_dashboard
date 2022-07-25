@@ -1,0 +1,41 @@
+.branding {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__col {
+    margin-bottom: 24px;
+    width: calc(33.33333% - 16px);
+    // margin-right: 12px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &--big {
+      width: calc(58.5% - 12px);
+      margin-right: 0;
+    }
+    &--mid {
+      width: calc(41.5% - 12px);
+      margin-right: 0;
+    }
+  }
+  &__btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &-item {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__cancel {
+    font-family: $f-Manrope-SemiBold;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: right;
+    color: #19191a;
+  }
+}

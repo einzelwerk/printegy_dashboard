@@ -1,0 +1,52 @@
+extends _dashboard-template-loader
+include ../mixins/smallbtn
+
+block content
+    .dashboard__products-head
+        h1.dashboard__title Products
+        button(type="button").btn.-blue.-medium Publish Products
+    .dashboard__productsblock-wrapper
+        .dashboard__productsblock
+            .dashboard__filters__block
+                .inputwpic
+                    input(type="text" placeholder="Search products").branding-card__input
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.8534 11.1464L8.8689 8.1619C9.68221 7.16719 10.0821 5.89794 9.98582 4.61667C9.88955 3.33541 9.3045 2.14016 8.35169 1.27815C7.39887 0.416146 6.15119 -0.0466629 4.86671 -0.014547C3.58224 0.0175689 2.35924 0.542153 1.4507 1.4507C0.542153 2.35924 0.0175689 3.58224 -0.014547 4.86671C-0.0466629 6.15119 0.416146 7.39887 1.27815 8.35169C2.14016 9.3045 3.33541 9.88955 4.61667 9.98582C5.89794 10.0821 7.16719 9.68221 8.1619 8.8689L11.1464 11.8534C11.2407 11.9445 11.367 11.9949 11.4981 11.9937C11.6292 11.9926 11.7546 11.94 11.8473 11.8473C11.94 11.7546 11.9926 11.6292 11.9937 11.4981C11.9949 11.367 11.9445 11.2407 11.8534 11.1464ZM4.99989 8.9999C4.20877 8.9999 3.43541 8.7653 2.77761 8.32577C2.11981 7.88625 1.60712 7.26153 1.30437 6.53063C1.00162 5.79972 0.922409 4.99546 1.07675 4.21953C1.23109 3.44361 1.61205 2.73088 2.17146 2.17146C2.73088 1.61205 3.44361 1.23109 4.21953 1.07675C4.99546 0.922409 5.79972 1.00162 6.53063 1.30437C7.26153 1.60712 7.88625 2.11981 8.32577 2.77761C8.7653 3.43541 8.9999 4.20877 8.9999 4.99989C8.99871 6.06039 8.57689 7.07712 7.82701 7.82701C7.07712 8.57689 6.06039 8.99871 4.99989 8.9999Z" fill="#8F9297"/>
+                    </svg>
+                .cselect#contacts-theme-sort(data-state="").dr__el
+                    select#filter-select-sort(name="sort" style="display:none")
+                        option(value='asc')
+                        option(value='desc')
+                    .__title.dr__el-btn Sort by
+                        span Default
+                    .__content.dr__el-block
+                        div(data-value="asc").cselect__label
+                            span ASC
+                        div(data-value="desc").cselect__label
+                            span DESC
+                .cselect#contacts-theme-limit(data-state="").dr__el
+                    select#filter-select-limit(name="limit" style="display:none")
+                        option(value='0')
+                        option(value='20')
+                        option(value='50')
+                    .__title.dr__el-btn Show
+                        span All
+                    .__content.dr__el-block
+                        div(data-value="0").cselect__label
+                            span All
+                        div(data-value="20").cselect__label
+                            span 20
+                        div(data-value="50").cselect__label
+                            span 50
+                .sort__btns
+                    +smallbtn('./img/sortgrid.svg')
+                    +smallbtn('./img/sortburger-active.svg', 'active')
+            block products
+
+        block sidebar
+            include ../content/p_sidebar
+
+block scripts
+    script(src="js/loader.js")
+    script(src="js/dashboardproducts.js")
+    script(src="js/select.js")

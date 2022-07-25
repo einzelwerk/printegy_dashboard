@@ -1,0 +1,123 @@
+.dz {
+  $dz: &;
+  position: relative;
+  &--filled {
+    #{$dz} {
+      &__info {
+        opacity: 1;
+      }
+      &__area {
+        &-content {
+          display: none;
+        }
+        &-pic {
+          display: flex;
+        }
+      }
+    }
+  }
+  &__area {
+    border: 1px dashed rgba(1, 24, 46, 0.12);
+    border-radius: 3px;
+    min-height: 166px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: rgb(250, 250, 250);
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 25px;
+    }
+    &-pic {
+      padding: 16px;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      &-img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+      }
+    }
+  }
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+  &__icon {
+    width: 36px;
+    height: 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('./img/cloud-upload.svg');
+    margin-bottom: 16px;
+  }
+  &__btn {
+    font-family: $f-Manrope-SemiBold;
+    font-size: 14px;
+    line-height: 14px;
+    color: #aaadb3;
+    border: 1px solid rgba(1, 24, 46, 0.12);
+    border-radius: 3px;
+    margin-bottom: 16px;
+    padding: 10px 44px;
+  }
+  &__note {
+    font-family: $f-Manrope-Medium;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #aaadb3;
+  }
+  &__info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 22px;
+    margin-top: 8px;
+    opacity: 0;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('./img/icon-file.svg');
+    }
+    &-name {
+      font-family: $f-Manrope-Regular;
+      font-size: 12px;
+      line-height: 14px;
+      color: #797a80;
+      margin-right: 8px;
+      max-width: 100px;
+      overflow-wrap: break-word;
+      @media screen and (min-width: 1280px) {
+        max-width: 150px;
+      }
+      @media screen and (min-width: 1600px) {
+        max-width: 230px;
+      }
+    }
+    &-link {
+      font-family: $f-Manrope-Medium;
+      font-size: 12px;
+      line-height: 14px;
+      color: #0e86f4;
+    }
+  }
+}

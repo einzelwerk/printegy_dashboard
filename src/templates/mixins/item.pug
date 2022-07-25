@@ -1,0 +1,79 @@
+include smallbtn
+include salebtn
+
+mixin item__block
+	.item__block(style="display:none")
+		.item__block__top
+			img(src="./img/image141.png" width="220" height="204" alt="").main__preview-pic-img
+			.item__block__top-sidebtns
+				+salebtn('./img/salepic.svg')
+			.item__block__top-actionbtns
+				+smallbtn('./img/PencilSimple.svg')
+				+smallbtn('./img/DownloadSimple.svg')
+				+smallbtn('./img/Trash.svg')
+		.item__block__desc 
+			h3.__title Phone Case
+			.item__block__charsblock
+				.item__block__charsblock-char
+					.name Design
+					.value Case-Merkel.png
+				.item__block__charsblock-char
+					.name Category
+					.value Phone & Tablet Cases
+				.item__block__charsblock-char
+					.name Gender
+					.value Unisex
+				.item__block__charsblock-char
+					.name Sizes
+					.value M, L, 2XL
+				.item__block__charsblock-char
+					.name Brand
+					.value Premium
+				.item__block__charsblock-char
+					.name Colors
+					.value Green, White, Blue
+				.item__block__charsblock-char
+					.name Bulk price
+					.value €14.90 + 0.00
+				.item__block__charsblock-char.chartoggler
+					.name Enable
+					input(type="checkbox").toggler
+
+mixin item__block-ph
+	.item__block.ph-item
+		.ph-col-12
+			.ph-row
+				.ph-col-auto
+					.item__block__top
+						.ph-picture
+				.item__block__desc.ph-col-4
+					.ph-row
+						.ph-col-12.ph-line.big
+						.ph-col-5.ph-line
+						.ph-col-2.empty
+						.ph-col-5.ph-line
+						.ph-col-5.ph-line
+						.ph-col-2.empty
+						.ph-col-5.ph-line
+						.ph-col-5.ph-line
+						.ph-col-2.empty
+						.ph-col-5.ph-line
+						.ph-col-5.ph-line
+						.ph-col-2.empty
+						.ph-col-5.ph-line
+
+mixin item__block-grid-ph
+	.item__block.ph-item
+		.ph-col-12
+			.item__block__top
+				.ph-picture
+			.ph-row.item__block__desc
+				.ph-col-8.ph-line
+				.ph-col-8.ph-line
+				.ph-col-8.ph-line
+				.ph-col-8.ph-line
+				.ph-col-8.ph-line
+				.ph-col-8.ph-line
+				.ph-col-8.ph-line
+				.ph-col-8.ph-line.big
+				

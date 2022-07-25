@@ -1,0 +1,19 @@
+.smallbtn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: $borderinput;
+    border-radius: $br;
+    background: $white;
+    transition: .2s;
+    cursor: pointer;
+    &:hover {
+        border: $borderinputhover;
+    }
+    &.active {
+        background: linear-gradient(0deg, rgba(14, 134, 244, 0.12), rgba(14, 134, 244, 0.12));
+    }
+}

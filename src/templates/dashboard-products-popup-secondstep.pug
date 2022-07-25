@@ -1,0 +1,71 @@
+extends core/_dashboard-template-loader
+include mixins/popupdesignitem
+
+block title
+    title Главная
+
+block content
+    .main
+        .popupmain
+            .dashboard__product__popup-header 
+                .__steps
+                    .__step.done
+                        .stepcount 1
+                        img(src="./img/check-gray.svg" width="16" height="16" alt="").check
+                        span Product
+                    .__step.active
+                        .stepcount 2
+                        img(src="./img/check-gray.svg" width="16" height="16" alt="").check
+                        span Design
+                    .__step
+                        .stepcount 3
+                        img(src="./img/check-gray.svg" width="16" height="16" alt="").check
+                        span Review
+                .__navigation
+
+            .dashboard__product__popup-contentwrapper
+                form(action="/").branding__form
+                    .dashboard__product__popup-content
+                        .__design__grid
+                            +item__design-popup-ph
+                            +item__design-popup-ph
+                            +item__design-popup-ph
+                            +item__design-popup-ph
+                            +item__design-popup-ph
+                            +item__design-popup-ph
+                            +item__design-popup-ph
+                            +item__design-popup-ph
+                            +item__design-popup-ph
+                            +item__design-popup("./img/designimg1.png")
+                            +item__design-popup("./img/designimg2.png") 
+                            +item__design-popup("./img/designimg3.png") 
+                            +item__design-popup("./img/designimg4.png") 
+                            +item__design-popup("./img/designimg5.png") 
+                            +item__design-popup("./img/designimg6.png") 
+                            +item__design-popup("./img/designimg7.png") 
+                            +item__design-popup("./img/designimg8.png") 
+                            +item__design-popup("./img/designimg9.png") 
+                        .__design__sidemenu
+                            .dz#dz
+                                .dz__area
+                                    input(type="file" accept="image/*").dz__input#inputFile
+                                    .dz__area-content
+                                        .dz__icon 
+                                        .dz__btn Add Image
+                                        .dz__note or drop images to upload
+                                        .dz__note.recommended Recommended size: 6000 x 6000 px Image formats: JPG, JPEG, PNG, GIF, WEBP
+                                    .dz__area-pic
+                                        img(src="", alt="")#inputPreview.dz__area-pic-img
+                                .dz__info
+                                    .dz__info-name#inputFileName
+                                    .dz__info-link Choose another file
+                            .main-form__line
+                                label.main-form__lable(for="reg_form_name") Design title*
+                                input.main-form__input#reg_form_name(type="text" placeholder="Write your design title")
+                            button(type="submit").btn.-blue.-medium Confirm & Add
+
+block scripts   
+    script(src="js/loader.js")
+    script(src="js/popupproducts-design.js")
+    script(src="/js/just-validate.production.min.js")
+

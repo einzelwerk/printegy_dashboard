@@ -1,0 +1,49 @@
+.main-form {
+  &__line {
+    position: relative;
+    margin-bottom: 26px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__lable {
+    display: block;
+    font-family: $f-Manrope-Regular;
+    font-size: 12px;
+    line-height: 14px;
+    color: #919399;
+    margin-bottom: 8px;
+  }
+  &__input {
+    background: #ffffff;
+    border: 1px solid rgba(1, 24, 46, 0.12);
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: $f-Manrope-Regular;
+    font-size: 14px;
+    line-height: 20px;
+    color: #19191a;
+    padding: 13px 14px;
+    width: 100%;
+    transition: color 0.3s, border-color 0.3s;
+    &:active,
+    &:focus,
+    &:hover {
+      border: 1px solid rgba(1, 24, 46, 0.24);
+    }
+    &.is-invalid {
+      border-color: #ed0a34;
+    }
+  }
+  &__btn {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    &-item {
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

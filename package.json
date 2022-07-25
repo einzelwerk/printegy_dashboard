@@ -1,0 +1,36 @@
+{
+    "name": "public_html",
+    "version": "1.0.0",
+    "description": "Устанавливаем пакеты: <br> npm i <br> Строим продакшн: <br> gulp build <br> Запускаем сервер: <br> gulp",
+    "main": "gulpfile.js",
+    "devDependencies": {
+        "@babel/core": "latest",
+        "@babel/preset-env": "latest",
+        "browser-sync": "latest",
+        "gulp": "latest",
+        "gulp-autoprefixer": "latest",
+        "gulp-babel": "latest",
+        "gulp-cache": "latest",
+        "gulp-cssmin": "latest",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-pug": "latest",
+        "gulp-pugbem": "latest",
+        "gulp-rigger": "latest",
+        "gulp-sass": "^5.1.0",
+        "gulp-svg-sprite": "latest",
+        "gulp-uglify-es": "^3.0.0",
+        "gulp-watch": "latest",
+        "imagemin-pngquant": "latest",
+        "pug": "latest",
+        "rimraf": "latest",
+        "sass": "^1.50.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "git",
+    "license": "ISC",
+    "dependencies": {
+        "node-fetch": "^2.6.1"
+    }
+}

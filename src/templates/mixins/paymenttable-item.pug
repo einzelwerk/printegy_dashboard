@@ -1,0 +1,12 @@
+mixin paymenttable__item(id, approved, approvedClass, type, provider, amount, order, date, pdf)
+    .paymentspage__table__order
+        .order__id= id
+        .order__shop GOTTESSHIRT
+        .order__approved(class=approvedClass)= approved
+        .order__type=type
+        .order__prodiver= provider
+        .order__amount= amount
+        .order__order= order
+        .order__data= date
+        a(href="").order__pdf Download
+            

@@ -1,0 +1,125 @@
+extends core/_dashboard-template-loader
+include mixins/popupitem
+
+block title
+    title Главная
+
+block content
+    .main
+        .popupmain
+            .dashboard__product__popup-header 
+                .__steps
+                    .__step.active
+                        .stepcount 1
+                        img(src="./img/check-gray.svg" width="16" height="16" alt="").check
+                        span Product
+                    .__step
+                        .stepcount 2
+                        img(src="./img/check-gray.svg" width="16" height="16" alt="").check
+                        span Design
+                    .__step
+                        .stepcount 3
+                        img(src="./img/check-gray.svg" width="16" height="16" alt="").check
+                        span Review
+                .__navigation
+                    button(type="button").btn.-blue.-medium Next step
+
+            .dashboard__product__popup-contentwrapper
+                .dashboard__product__popup-content
+
+                    .__products__grid
+                        +item__block-popup-ph
+                        +item__block-popup-ph
+                        +item__block-popup-ph
+                        +item__block-popup-ph
+                        +item__block-popup-ph
+                        +item__block-popup-ph
+                        +item__block-popup
+                        +item__block-popup
+                        +item__block-popup 
+                        +item__block-popup 
+                        +item__block-popup 
+                        +item__block-popup 
+
+                    .__caregories__filter
+                        .__caregory__filter.toggle__elem
+                            .__head.toggle__elem__btn.toggle__arrow
+                                .title All
+                            .__content.toggle__elem__content
+                                ul.category__list
+                                    li.category__list-item.active
+                                        a(href="") All
+                                            span.count (7)
+                        .__caregory__filter.toggle__elem
+                            .__head.toggle__elem__btn.toggle__arrow
+                                .title Unisex Shirts
+                                .count 1
+                            .__content.toggle__elem__content
+                                ul.category__list
+                                    li.category__list-item.active
+                                        a(href="") All
+                                            span.count (7)
+                                    li.category__list-item
+                                        a(href="") Apparel
+                                            span.count (4)
+                                    li.category__list-item
+                                        a(href="") Homeware
+                                            span.count (1)
+                                    li.category__list-item
+                                        a(href="") Phone & Tablet Cases
+                                            span.count (2)
+                        .__caregory__filter.active.toggle__elem
+                            .__head.toggle__elem__btn.toggle__arrow
+                                .title V-Neck Shirts
+                                .count 3
+                            .__content.toggle__elem__content--active
+                                ul.category__list
+                                    li.category__list-item.active
+                                        a(href="") All
+                                            span.count (7)
+                                    li.category__list-item
+                                        a(href="") Apparel
+                                            span.count (4)
+                                    li.category__list-item
+                                        a(href="") Homeware
+                                            span.count (1)
+                                    li.category__list-item
+                                        a(href="") Phone & Tablet Cases
+                                            span.count (2)
+                        .__caregory__filter.toggle__elem
+                            .__head.toggle__elem__btn.toggle__arrow
+                                .title Tank-Tops
+                            .__content.toggle__elem__content
+                                ul.category__list
+                                    li.category__list-item.active
+                                        a(href="") All
+                                            span.count (7)
+                        .__caregory__filter.toggle__elem
+                            .__head.toggle__elem__btn.toggle__arrow
+                                .title Hoodies
+                            .__content.toggle__elem__content
+                                ul.category__list
+                                    li.category__list-item.active
+                                        a(href="") All
+                                            span.count (7)
+                        .__caregory__filter.toggle__elem
+                            .__head.toggle__elem__btn.toggle__arrow
+                                .title Sweatshirts
+                                .count 5
+                            .__content.toggle__elem__content
+                                ul.category__list
+                                    li.category__list-item.active
+                                        a(href="") All
+                                            span.count (7)
+                        .__caregory__filter.toggle__elem
+                            .__head.toggle__elem__btn.toggle__arrow
+                                .title Jacket / Zip-Hoodies
+                            .__content.toggle__elem__content
+                                ul.category__list
+                                    li.category__list-item.active
+                                        a(href="") All
+                                            span.count (7)
+
+block scripts
+    script(src="js/loader.js")
+    script(src="js/dashboardproducts.js")

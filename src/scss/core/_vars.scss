@@ -1,0 +1,155 @@
+//colors
+$black: #000;
+$white: #fff;
+$dark-grey: #243448;
+$light-grey: #344258;
+$dark-blue: #08172d;
+$light-blue: #4c89c1;
+$accent-dark: #0c1c28;
+// site colors
+$bluemain: #0E86F4;
+$bluemainh: #86C3FB;
+$redmain: #ED0A34;
+$redmainh: #F44C6B;
+$blacktext: #19191A;
+$blacktextsec: #161616;
+$textsecondary: #606266;
+$greenmain: #1FB46C;
+$yellowmain: #DBAF3E;
+$ltgray: #F3F4F6;
+$gray100: #E0E1E6;
+$gray200: #C4C6CC;
+$gray300: #AAADB3;
+$gray400: #919399;
+$gray500: #797A80;
+$gray800: #313133;
+$gray900: #19191A;
+// backgrounds
+$back-lightblue: rgba(14, 134, 244, 0.12);
+//size
+$w-desktop-l: 1600px;
+$w-desktop: 1280px;
+$w-desktop-s: 1024px;
+$w-tablet: 768px;
+$w-mobile: 425px;
+//width
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black-w: 900;
+//fonts
+$f-Manrope-Regular: 'Manrope-Regular',
+sans-serif;
+$f-Manrope-Bold: 'Manrope-Bold',
+sans-serif;
+$f-Manrope-ExtraBold: 'Manrope-ExtraBold',
+sans-serif;
+$f-Manrope-ExtraLight: 'Manrope-ExtraLight',
+sans-serif;
+$f-Manrope-Light: 'Manrope-Light',
+sans-serif;
+$f-Manrope-Medium: 'Manrope-Medium',
+sans-serif;
+$f-Manrope-SemiBold: 'Manrope-SemiBold',
+sans-serif;
+//borders
+$borderinput: 1px solid rgba(1, 24, 46, 0.12);
+$borderinputhover-half:1px solid rgba(1, 24, 46, .24);
+$borderinputhover:1px solid rgba(1, 24, 46, .32);
+$br: 3px;
+$br4: 4px;
+//flex
+@mixin flexaligncenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexbetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// margins
+.stm12 {
+    margin-top: 12px;
+}
+
+.stm16 {
+    margin-top: 16px;
+}
+
+.stm {
+    margin-top: 24px;
+}
+
+// text
+.p13-400 {
+    font-weight: 400;
+    font-size: 13px;
+    color: $gray400;
+}
+
+.p14-500 {
+    font-weight: 400;
+    font-size: 14px;
+    color: $gray500;
+}
+
+.p13-600 {
+    font-weight: 600;
+    font-size: 13px;
+    color: $gray400;
+}
+
+.p14-600 {
+    font-weight: 600;
+    font-size: 14px;
+    color: $gray400;
+}
+
+.title18 {
+    font-weight: 600;
+    font-size: 18px;
+    color: $blacktext;
+}
+
+.flex-c-b {
+    @include flexbetween;
+}
+
+.flex-c {
+    @include flexcenter;
+}
+
+.flex-co {
+    @include flexaligncenter;
+}
+
+// titles
+@mixin title18 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: $blacktext;
+}
+
+.stblock {
+    background: $white;
+    border: $borderinput;
+    border-radius: $br4;
+}
+
+.pad24 {
+    padding: 24px;
+}

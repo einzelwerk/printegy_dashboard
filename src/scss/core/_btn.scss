@@ -1,0 +1,90 @@
+.btn {
+    display: inline-block;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: $f-Manrope-SemiBold;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    border: none;
+    padding: 17px 20px;
+    min-width: 160px;
+    transition: color 0.3s, background-color 0.3s;
+    &--blue {
+        background-color: #0e86f4;
+        color: white;
+        &:hover {
+            background-color: darken(#0e86f4, 3%);
+        }
+    }
+    &--lightblue {
+        background-color: rgba(14, 134, 244, 0.12);
+        color: #0E7DE2;
+        &:hover {
+            background-color: rgba(14, 134, 244, 0.36)
+        }
+    }
+    &--reverse {
+        border: 1px solid #0E7DE2;
+        color: #0E7DE2;
+        background: transparent;
+        &:hover {
+            border: 1px solid $bluemainh;
+            color: $bluemainh;
+        }
+    }
+    &--white {
+        background-color: #ffffff;
+        color: #19191a;
+        border: 1px solid rgba(1, 24, 46, 0.12);
+        padding: 16px 20px;
+        &:hover {
+            background-color: darken(#ffffff, 3%);
+        }
+    }
+    &--whitewblue {
+        background-color: #ffffff;
+        color: $gray400;
+        border: 1px solid rgba(1, 24, 46, 0.12);
+        padding: 16px 20px;
+        &:hover {
+            border: 1px solid transparent;
+            background: rgba(14, 134, 244, 0.12);
+            color: $bluemain;
+        }
+    }
+    &--warning {
+        background-color: $redmain;
+        color: white;
+        &:hover {
+            background-color: darken($redmain, 3%);
+        }
+    }
+    &--compact {
+        padding: 12px 20px;
+        min-width: 120px;
+    }
+    &--blue-text {
+        color: #0e86f4;
+    }
+    &--medium {
+        padding: 13px 20px;
+    }
+    &--wide {
+        padding: 13px 40px;
+    }
+    &--large {
+        padding: 13px 48px;
+    }
+    &--wplus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            margin-left: 8px;
+        }
+    }
+    &--full {
+        width: 100%;
+    }
+}

@@ -1,0 +1,35 @@
+include ../mixins/_mixins
+
+doctype html
+html(lang="en")
+    block sharedVars
+    head
+        block title
+        meta(charset='utf-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="description")
+        meta(name="keywords" content="keywords")
+        include _head_style
+
+    body(id='loader')
+        .loader
+            .lds-dual-ring
+        //- include _header
+        //end header
+        .dashboard
+            .dashboard__header
+                include _d-header
+            .dashboard__sidebar
+                include _d-sidebar
+            .dashboard__content
+                block content
+            .overlays
+                block overlays
+            //end content
+        include _footer
+        //end footer
+        //- include ../blocks/_popup
+        //end modal
+        block scripts
+        include _scripts
+        //end wrapper

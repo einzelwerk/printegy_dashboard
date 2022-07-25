@@ -1,0 +1,32 @@
+.dashboard {
+  position: relative;
+  &__header {
+    position: fixed;
+    left: 232px;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+  &__sidebar {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  &__content {
+    position: relative;
+    margin-left: 232px;
+    margin-top: 66px;
+    padding: 32px 40px;
+    background-color: #f3f4f6;
+    min-height: calc(100vh - 66px);
+  }
+  &__title {
+    font-family: $f-Manrope-SemiBold;
+    font-size: 24px;
+    line-height: 36px;
+    color: #19191a;
+    margin-bottom: 28px;
+  }
+}

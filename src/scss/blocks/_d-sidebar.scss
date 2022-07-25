@@ -1,0 +1,106 @@
+.d-sidebar {
+  width: 232px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-right: 1px solid #e0e1e6;
+  &__logo {
+    position: relative;
+    border-bottom: 1px solid #e0e1e6;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    &-link {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &__nav {
+    padding: 20px 8px;
+  }
+  &__link {
+    $l: &;
+    display: block;
+    position: relative;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    padding: 12px 20px 12px 40px;
+    margin-bottom: 12px;
+    &:hover {
+      background-color: #f6f7f8;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      height: 32px;
+      width: 2px;
+      background: #0e86f4;
+      border-radius: 100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &--active {
+      background-color: #f3f4f6;
+      &:after {
+        opacity: 1;
+      }
+      #{$l} {
+        &-text {
+          color: #0e86f4;
+        }
+        &-img {
+          opacity: 1;
+          filter: grayscale(0);
+        }
+      }
+    }
+    &-text {
+      font-family: $f-Manrope-Medium;
+      font-size: 16px;
+      line-height: 16px;
+      color: #aaadb3;
+    }
+    &-img {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 16px;
+      filter: grayscale(1);
+      opacity: 0.7;
+      transition: filter 0.3s, opacity 0.3s;
+    }
+  }
+  &__bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 24px;
+  }
+  &__help {
+    font-family: $f-Manrope-SemiBold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #aaadb3;
+  }
+  &__version {
+    font-family: $f-Manrope-Regular;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: right;
+    color: #c4c6cc;
+  }
+}

@@ -1,0 +1,13 @@
+extends core/_dashboard-template
+
+
+block title
+    title Products
+
+block content
+    .dashboardproduct__status__wrapper
+        .dashboardproduct__status.published
+            img(src="./img/publishedimg.png" width="331" height="375" alt="")
+            h1.__title Well done!
+            p.__desc Your products are ready
+            button(type="button").btn.-blue.-large View your Store

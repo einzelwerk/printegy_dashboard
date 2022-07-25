@@ -1,0 +1,32 @@
+include smallbtn
+include salebtn
+
+
+mixin item__block-popup
+    .item__block-popup(style="display:none")
+        .item__block-popup__top
+            img(src="./img/productpopupimg.png" width="325" height="210" alt="").main__preview-pic-img
+            .__sidebtns
+                input(type="checkbox").toggler
+        .item__block-popup__information
+            .__title Stanley/Stella Blaster T-Shirt
+            .__color__choise
+                each color in ['#CA2230', "#62625F", "#717C58", "#E37878", "#E8E8E8", "#092149", "#49945E", "#3A4FAF", "#F6EF4F", "#4FF6CE"]
+                    .colorpic(style=`background:${color}` data-colorpic="")
+
+            .__sizes Available Sizes:
+                span S - 5XL
+            .__cost Starting from
+                span €14.90
+
+mixin item__block-popup-ph
+    .item__block-popup.ph-item
+        .ph-row
+            .item__block-popup__top.ph-col-12
+                .ph-picture
+            .item__block-popup__information.ph-col-12
+                .ph-row.fd-column
+                    .ph-line.ph-col-8.title
+                    .ph-line.ph-col-6.title
+                    .ph-line.ph-col-5
+                    .ph-line.ph-col-6.title

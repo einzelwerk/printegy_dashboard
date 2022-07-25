@@ -1,0 +1,54 @@
+.user-drop {
+  display: flex;
+  position: relative;
+  align-items: center;
+  &__pic {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $f-Manrope-SemiBold;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+  }
+  &__data {
+    padding-right: 17px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 9px;
+      width: 9px;
+      height: 5px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('./img/user-drop-arr.svg');
+    }
+  }
+  &__name {
+    font-family: $f-Manrope-Regular;
+    font-size: 15px;
+    line-height: 22px;
+    color: #19191a;
+  }
+  &__descr {
+    font-family: $f-Manrope-Regular;
+    font-size: 13px;
+    line-height: 20px;
+    color: #606266;
+  }
+}
+.dr__el-btn {
+  cursor: pointer
+}
