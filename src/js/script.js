@@ -1,10 +1,13 @@
-(() => {
+!(function () {
     const loginForm = document.getElementById('login_form');
+    const accountForm = document.getElementById('account_form');
     const regForm = document.getElementById('reg_form');
     const resetForm = document.getElementById('reset_form');
     const newPasswordForm = document.getElementById('new_password_form');
     const brandingForm = document.getElementById('branding_form');
     const popDesignForm = document.getElementById('popdesign_form');
+    const billingForm = document.getElementById('billing_form');
+    const senderForm = document.getElementById('sender_form');
 
 
     if (loginForm) {
@@ -19,6 +22,111 @@
                 errorMessage: 'Field is required',
             }, ])
             .addField('#login_form_password', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .onSuccess((event) => {
+                console.log('Validation passes and form submitted', event);
+            });
+    }
+    if (accountForm) {
+        new JustValidate(accountForm, {
+            errorFieldCssClass: 'is-invalid',
+            errorLabelStyle: {
+                color: '#ed0a34',
+            },
+        })
+            .addField('#account_form_name', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#account_form_email', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#account_form_newp', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#account_form_cp', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .onSuccess((event) => {
+                console.log('Validation passes and form submitted', event);
+            });
+    }
+    if (billingForm) {
+        new JustValidate(billingForm, {
+                errorFieldCssClass: 'is-invalid',
+                errorLabelStyle: {
+                    color: '#ed0a34',
+                },
+            })
+            .addField('#billing_form_companyname', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#billing_form_email', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#billing_form_phone', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#billing_form_country', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#billing_form_state', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#billing_form_city', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#billing_form_zip', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .onSuccess((event) => {
+                console.log('Validation passes and form submitted', event);
+            });
+    }
+    if (senderForm) {
+        new JustValidate(senderForm, {
+                errorFieldCssClass: 'is-invalid',
+                errorLabelStyle: {
+                    color: '#ed0a34',
+                },
+            })
+            .addField('#sender_form_companyname', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#sender_form_email', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#sender_form_phone', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#sender_form_country', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#sender_form_state', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#sender_form_city', [{
+                rule: 'required',
+                errorMessage: 'Field is required',
+            }, ])
+            .addField('#sender_form_zip', [{
                 rule: 'required',
                 errorMessage: 'Field is required',
             }, ])
@@ -195,12 +303,19 @@
     // Dropzone
 
     const inputEl = document.getElementById('inputFile');
-
     if (inputEl) {
         const dropzone = document.getElementById('dz');
         const inputFileName = document.getElementById('inputFileName');
+        const buttonFileRemove = document.getElementById('buttonFileRemove');
+        const inputFile = document.getElementById('inputFile');
 
         inputEl.addEventListener('change', handleFiles, false);
+        if (buttonFileRemove) {
+            buttonFileRemove.addEventListener('click', () => {
+                dropzone.classList.remove('dz--filled');
+                inputFile.value = '';
+            }, false);
+        }
 
         function handleFiles() {
             const fileList = this.files;
@@ -210,7 +325,7 @@
                 inputPreview.src = URL.createObjectURL(fileList[0]);
                 inputFileName.innerHTML = fileList[0].name;
             } else {
-                dropzone.classList.remove('dz--filled');
+                // dropzone.classList.remove('dz--filled');
             }
         }
     }
@@ -218,7 +333,6 @@
     // Textarea short message counter
 
     const textareaEl = document.getElementById('short_message');
-
     if (textareaEl) {
         const counterEl = document.getElementById('short_message_counter');
 
@@ -227,70 +341,35 @@
         });
     }
 
-    // Select
-    document.addEventListener('click', event => {
-        let target = event.target;
-        if (target.localName == 'span') {
-            let parent = target.closest('.cselect__label');
-            if (parent) target = parent;
+    // profile dropdown
+    function Dropdown(element, toggleSelector=".dr__el-btn", menuSelector=".dr__el-block", menuItemSelector=".dropdown-item"){
+        this.element = element
+        this.toggler = element.querySelector(toggleSelector)
+        this.menu = element.querySelector(menuSelector)
+
+        this.toggleHandler =  (event) => this.toggle(event)
+        this.toggler.addEventListener('click', this.toggleHandler)
+    }
+    Dropdown.prototype.toggle = function(event){
+        const isexpanded = this.menu.dataset.expanded == 'true'
+        if(isexpanded){
+
+            this.element.classList.remove('active')
+            this.menu.classList.remove('show')
+            document.removeEventListener('click', this.toggleHandler)
+
+        } else {
+
+            this.element.classList.add('active')
+            this.menu.classList.add('show')
+            setTimeout(() => document.addEventListener('click', this.toggleHandler), 10)
         }
+        this.menu.dataset.expanded = '' + (!isexpanded)
+    }
+    document.querySelectorAll('.dr__el').forEach(element => {
+        new Dropdown(element)
+    })
 
-        if ([...target.classList].includes('cselect__label')) {
-            let parent = target.closest('.cselect');
-            let select = parent.querySelector('select');
-            if (select) {
-                select.value = target.getAttribute('data-value');
-                select.dispatchEvent(new Event('change'));
-                let title = parent.querySelector('.cselect__title');
-                let prefix = title.getAttribute('data-prefix');
-                if (prefix) {
-
-                    title.innerHTML = `${prefix}${target.innerHTML}`;
-                } else {
-                    title.innerHTML = target.innerHTML;
-                }
-
-            }
-        }
-    });
-    // TEST
-    // document.querySelector('#filter-select-sort').value = 'desc';
-    // document.querySelector('#filter-select-sort').dispatchEvent(new Event('change'));
-    // document.getElementById('filter-select-sort').addEventListener('change', event => {
-    //     console.log(event.target.value);
-    // });
 })();
 
-// profile dropdown
 
-function Dropdown(element, toggleSelector=".dr__el-btn", menuSelector=".dr__el-block", menuItemSelector=".dropdown-item"){
-    this.element = element
-    this.toggler = element.querySelector(toggleSelector)
-    this.menu = element.querySelector(menuSelector)
-
-    this.toggleHandler =  (event) => this.toggle(event)
-
-    this.toggler.addEventListener('click', this.toggleHandler)
-}
-
-Dropdown.prototype.toggle = function(event){
-    const isexpanded = this.menu.dataset.expanded == 'true'
-
-    if(isexpanded){
-   
-        this.element.classList.remove('active')
-        this.menu.classList.remove('show')
-        document.removeEventListener('click', this.toggleHandler)
-        
-    }else{
-  
-        this.element.classList.add('active')
-        this.menu.classList.add('show')
-        setTimeout(() => document.addEventListener('click', this.toggleHandler), 10)
-    }
-    this.menu.dataset.expanded = '' + (!isexpanded)
-}
-
-document.querySelectorAll('.dr__el').forEach(element => {
-    new Dropdown(element)
-})

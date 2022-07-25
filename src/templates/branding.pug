@@ -1,0 +1,83 @@
+extends core/_dashboard-template
+
+block title
+	title Branding
+
+block content
+	h1.dashboard__title Branding
+	.dashboard__inner
+		.branding
+			form(action="/").branding__form#branding_form
+				.branding__row
+					.branding__col.-big
+						.branding-card
+							.branding-card__row
+								picture.branding-card__pic
+									source(srcset="./img/branding-card-pic.webp, ./img/branding-card-pic@2x.webp 2x" type="image/webp")
+									source(srcset="./img/branding-card-pic.png, ./img/branding-card-pic@2x.png 2x" type="image/png")
+									img(src="./img/branding-card-pic.png" width="522" height="472" alt="").branding-card__pic-img
+								.branding-card__content.-big
+									.branding-card__title Create brand awareness for your customers and enhance your identity with a custom branded 
+										a(href="#").branding-card__link packing slip
+										.
+											.
+									.branding-card__btn
+										a(href="#").btn.-white.-blue-text.-compact More information
+					.branding__col.-mid
+						.branding-card.-pic
+							.branding-card__content.-short
+								.branding-card__title If you need custom branding service, you could contact us via button bellow 
+								.branding-card__text Didn't find the branding feature you were looking for? Contact us and we will definitely help you!
+								.branding-card__btn
+									a(href="#").btn.-white.-blue-text.-compact Contact us
+					.branding__col
+						.branding-card
+							.branding-card__top
+								.branding-card__title Add a logo
+								.branding-card__num 01
+							.branding-card__inner
+								.dz#dz
+									.dz__area
+										input(type="file" accept="image/*").dz__input#inputFile
+										.dz__area-content
+											.dz__icon 
+											.dz__btn Add Image
+											.dz__note or drop images to upload
+										.dz__area-pic
+											img(src="", alt="")#inputPreview.dz__area-pic-img
+									.dz__info
+										.dz__info-name#inputFileName
+										label.dz__info-link(for="inputFile") Choose another file
+									
+					.branding__col
+						.branding-card
+							.branding-card__top
+								.branding-card__title Add a brand information
+								.branding-card__num 02
+							.branding-card__content
+								.branding-card__line
+									input(type="text" placeholder="example.com").branding-card__input#store_url
+									label(for="store_url").branding-card__label#store_url Store url*
+								.branding-card__line
+									input(type="text" placeholder="example@mail.com").branding-card__input#support_email
+									label(for="support_email").branding-card__label Customer support e-mail*
+
+					.branding__col
+						.branding-card
+							.branding-card__top
+								.branding-card__title Add a short message
+								.branding-card__num 03
+							.branding-card__content
+								.branding-card__line
+									textarea(placeholder="Placeholder" maxlength="300").branding-card__textarea#short_message
+									label(for="short_message").branding-card__label Optional
+									.branding-card__count#short_message_counter 0/300
+				.branding__btns
+					.branding__btns-item
+						a(href="#").branding__cancel Cancel
+					.branding__btns-item
+						button(type="submit").btn.-blue.-medium Save changes
+						
+block scripts
+	script(src="js/just-validate.production.min.js")
+			

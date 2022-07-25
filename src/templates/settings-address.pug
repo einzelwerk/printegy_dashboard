@@ -1,0 +1,114 @@
+extends core/_dashboard-template
+include mixins/shippingtable-item
+
+block title
+    title Settings Address
+
+block content
+    .dashboard__products-head
+        h1.dashboard__title Settings
+
+    .settingspage__tabs
+        a(href="").__tab.active Address 
+        a(href="").__tab Shipping 
+        a(href="").__tab Preferences 
+    .settingspage__content__wrapper 
+
+        .settingspage__addressblock
+            .__titleblock.flex-c-b
+                h2.__title Billing Address
+            .__infoblock
+                h3 Your billing address
+                p Manage your billing address. This information will appear on your invoices.
+            .__adressblock
+                form.main-form#billing_form(action="")
+                    .main-form__line
+                        label.main-form__lable(for="billing_form_companyname") Company / Store name
+                        input.main-form__input#billing_form_companyname(type="text" name="companyname" placeholder="Gottesshirt LLC." value="")
+                    .forminputs__wrapper.mailgrid
+                        .main-form__line
+                            label.main-form__lable(for="billing_form_email") Email
+                            input.main-form__input#billing_form_email(type="email" name="email" placeholder="dima.shatunov@gmail.com" value="")
+                        .main-form__line
+                            label.main-form__lable(for="billing_form_phone") Phone
+                            input.main-form__input#billing_form_phone(type="tel" name="phone" placeholder="+49 9039580" value="")
+                    .main-form__line
+                        label.main-form__lable(for="billing_form_address1") Address 1
+                        input.main-form__input#billing_form_address1(type="text" name="address1" placeholder="Berlin, Deutsch Schtrazze, 61/B" value="")
+                    .main-form__line
+                        label.main-form__lable(for="billing_form_address2").noactive Address 2
+                        input.main-form__input#billing_form_address2(type="text" name="address2" placeholder="Placeholder").noactive
+                    .forminputs__wrapper
+                        .main-form__line
+                            label.main-form__lable(for="billing_form_country") Country
+                            input.main-form__input#billing_form_country(type="text" name="country" placeholder="Germany" value="")
+                        .main-form__line
+                            label.main-form__lable(for="billing_form_state").noactive State
+                            input.main-form__input#billing_form_state(type="text" name="state" placeholder="State" value="").noactive
+                    .forminputs__wrapper
+                        .main-form__line
+                            label.main-form__lable(for="billing_form_city") City
+                            input.main-form__input#billing_form_city(type="text" name="city" placeholder="Berlin" value="")
+                        .main-form__line
+                            label.main-form__lable(for="billing_form_zip") Postal / ZIP Code
+                            input.main-form__input#billing_form_zip(type="text" name="zip" placeholder="44350" value="")
+                    .formbtns__wrapper
+                        .main-form__btn
+                            button.btn.cancel(type="button") Cancel
+                        .main-form__btn
+                            button.btn.-blue.confirm(type="submit") Confirm changes
+
+
+        .settingspage__addressblock
+            .__titleblock.flex-c-b
+                h2.__title Sender Address
+            .__infoblocks-grid
+                label.settingspage__addressblock__infoblock.infoblock-half
+                    h3 Printegy as a Sender
+                    p We are the sender. Returns are sent to us.
+                    <input class="toggler" type="radio" name="sender" checked>
+                label.settingspage__addressblock__infoblock.infoblock-half
+                    h3 Your company address
+                    p Your German address. Returns are sent to you.
+                    <input class="toggler" type="radio" name="sender">
+            .__adressblock.hidden#form-sender-address
+                form.main-form#sender_form(action="")
+                    .main-form__line
+                        label.main-form__lable(for="sender_form_companyname") Company / Store name
+                        input.main-form__input#sender_form_companyname(type="text" name="companyname" placeholder="" value="Gottesshirt LLC.")
+                    .forminputs__wrapper.mailgrid
+                        .main-form__line
+                            label.main-form__lable(for="sender_form_email") Email
+                            input.main-form__input#sender_form_email(type="email" name="email" placeholder="" value="dima.shatunov@gmail.com")
+                        .main-form__line
+                            label.main-form__lable(for="sender_form_phone") Phone
+                            input.main-form__input#sender_form_phone(type="tel" name="phone" placeholder="" value="+49 9039580")
+                    .main-form__line
+                        label.main-form__lable(for="sender_form_address1") Address 1
+                        input.main-form__input#sender_form_address1(type="text" name="address1" placeholder="" value="Berlin, Deutsch Schtrazze, 61/B")
+                    .main-form__line
+                        label.main-form__lable(for="sender_form_address2") Address 2
+                        input.main-form__input#sender_form_address2(type="text" name="address2" placeholder="Placeholder")
+                    .forminputs__wrapper
+                        .main-form__line
+                            label.main-form__lable(for="sender_form_country") Country
+                            input.main-form__input#sender_form_country(type="text" name="country" placeholder="Germany" value="")
+                        .main-form__line
+                            label.main-form__lable(for="sender_form_state") State
+                            input.main-form__input#sender_form_state(type="text" name="state" placeholder="State" value="")
+                    .forminputs__wrapper
+                        .main-form__line
+                            label.main-form__lable(for="sender_form_city") City
+                            input.main-form__input#sender_form_city(type="text" name="city" placeholder="Berlin" value="")
+                        .main-form__line
+                            label.main-form__lable(for="sender_form_zip") Postal / ZIP Code
+                            input.main-form__input#sender_form_zip(type="text" name="zip" placeholder="44350" value="")
+                    .formbtns__wrapper
+                        .main-form__btn
+                            button.btn.cancel(type="button") Cancel
+                        .main-form__btn
+                            button.btn.-blue.confirm(type="submit") Confirm changes
+
+block scripts
+    script(src="js/just-validate.production.min.js")
+    script(src="js/dashboardproducts.js")

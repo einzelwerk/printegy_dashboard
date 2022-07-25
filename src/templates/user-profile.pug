@@ -1,0 +1,67 @@
+extends core/_dashboard-template
+
+block title
+    title User Profile
+
+block content
+    .dashboard__products-head
+        h1.dashboard__title User Profile
+
+    form.main-form#account_form(action="#" method="post")
+        .settingspage__content__wrapper
+            .settingspage__addressblock
+                .__titleblock.flex-c-b
+                    h2.__title Avatar Image
+
+                .__adressblock
+                    .dz#dz
+                        .dz__area
+                            input(type="file" accept="image/*").dz__input#inputFile
+                            .dz__area-content.userprofile
+                                .dz__icon
+                                .dz__btn Add Image
+                                .dz__note or drop images to upload
+                                .dz__note.recommended Recommended size: 6000 x 6000 px Image formats: JPG, JPEG, PNG, GIF, WEBP
+                            .dz__area-pic
+                                img(src="", alt="")#inputPreview.dz__area-pic-img
+                        .dz__info
+                            .dz__info-name#inputFileName
+                            button#buttonFileRemove.dz__info-remove(type="button")
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1544 1.84546L1.84534 12.1545" stroke="#ED0A34" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12.1544 12.1545L1.84534 1.84546" stroke="#ED0A34" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                span Delete
+
+
+
+            .settingspage__addressblock
+                .__titleblock.flex-c-b
+                    h2.__title Account Information
+                .__adressblock
+                    .forminputs__wrapper
+                        .main-form__line
+                            label.main-form__lable(for="account_form_name") Name
+                            input.main-form__input#account_form_name(type="text" placeholder="Gottesshirt LLC." value="")
+                        .main-form__line
+                            label.main-form__lable(for="account_form_email") Email
+                            input.main-form__input#account_form_email(type="email" placeholder="dima.shatunov@gmail.com" value="")
+                    .forminputs__wrapper
+                        .main-form__line
+                            label.main-form__lable(for="account_form_newp") New password
+                            input.main-form__input#account_form_newp(type="password" placeholder="" value="")
+                        .main-form__line
+                            label.main-form__lable(for="account_form_cp") Confirm new password
+                            input.main-form__input#account_form_cp(type="password" placeholder="" value="")
+        .formbtns__wrapper
+            .main-form__btn
+                button.btn.cancel(type="button") Cancel
+            .main-form__btn
+                button.btn.-blue.confirm(type="submit") Confirm changes
+
+
+ 
+
+block scripts
+    script(src="js/just-validate.production.min.js")
+    script(src="js/dashboardproducts.js")

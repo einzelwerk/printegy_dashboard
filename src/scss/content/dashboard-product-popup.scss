@@ -692,6 +692,7 @@
             .btn-cancel {
                 margin-left: 35px;
                 cursor: pointer;
+                font-weight: 600;
             }
             &.btop {
                 border-top: $borderinput;
@@ -984,6 +985,7 @@
                         background: transparent;
                         cursor: pointer;
                         transition: .3s;
+                        border: none;
                         &:hover {
                             background: #EEEFF4;
                         }
@@ -1011,6 +1013,7 @@
                             padding: 12px 13px;
                             border-radius: $br4;
                             cursor: pointer;
+                            border: none;
                             &:hover {
                                 background: rgba(25, 25, 26, 0.06);
                             }

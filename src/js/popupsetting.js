@@ -29,12 +29,15 @@ function deleteText() {
     this.remove();
 }
 
-tagBtn.addEventListener("click", function(e) {
-    if (tagValue.value !== '') {
-        addText(tagValue.value);
-    }
-    tagValue.value = '';
-});
+if (tagBtn) {
+    tagBtn.addEventListener("click", function(e) {
+        if (tagValue.value !== '') {
+            addText(tagValue.value);
+        }
+        tagValue.value = '';
+    });
+}
+
 
 let editBtns = document.querySelectorAll('.open-modal');
 if (editBtns.length) {
@@ -58,7 +61,7 @@ let Modal = {
 
 // close modal
 let closeBtns = document.querySelectorAll('.warningmodal__wrapper__modal .crs');
-if (closeBtns.length > 0) {
+if (closeBtns.length) {
     closeBtns.forEach((item) => {
         item.addEventListener('click', () => {
             Modal.hide(document.getElementById(item.getAttribute('data-modal')));

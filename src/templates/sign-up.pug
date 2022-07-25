@@ -1,0 +1,54 @@
+extends core/_template
+
+block title
+	title Главная
+
+block content
+	.main
+		.main__content
+			.main__content-top
+				img(src="./img/main-logo.svg" width="114" height="24" alt="").main__logo
+				.main__lang
+					include blocks/language-drop
+				
+			.main__content-form.-top
+				h1.main__content-title Sign up to Printegy
+				p.main__content-text Your new Shopify experience is starting here. Welcome on board!
+
+				form.main-form#reg_form(action="")
+					.main-form__line
+						label.main-form__lable(for="reg_form_email") Email
+						input.main-form__input#reg_form_email(type="email" placeholder="example@email.com")
+					.main-form__line
+						label.main-form__lable(for="reg_form_name") Username
+						input.main-form__input#reg_form_name(type="text" placeholder="Not less than 6 symbols")
+					.main-form__line
+						label.main-form__lable(for="reg_form_password") Password
+						input.main-form__input#reg_form_password(type="password" placeholder="***********************")
+					.main-form__line
+						label.main-form__lable(for="reg_form_password_repeat") Confirm password
+						input.main-form__input#reg_form_password_repeat(type="password" placeholder="***********************")
+					.main-form__line
+						.checkbox 
+							input.checkbox__input#agree_checkbox(type="checkbox")
+							label.checkbox__label(for="agree_checkbox") I agree to 
+								a.checkbox__label-link(href="#") the terms and conditions
+					.main-form__btn
+						button.btn.-blue(type="submit") Sign up
+
+			.main__content-bottom
+				.main__note Already have an account? 
+					a(href="#").main__note-link Login
+
+		.main__preview
+			.main__preview-text
+				.main__preview-text-subtitle NEW EXPERIENCE
+				.main__preview-text-title STARTING HERE
+
+			picture.main__preview-pic
+				source(srcset="./img/main-pic-2.webp, ./img/main-pic-2@2x.webp 2x" type="image/webp")
+				source(srcset="./img/main-pic-2.png, ./img/main-pic-2@2x.png 2x" type="image/png")
+				img(src="./img/main-pic-2.png" width="522" height="519" alt="").main__preview-pic-img
+			
+block scripts
+	script(src="./js/just-validate.production.min.js")

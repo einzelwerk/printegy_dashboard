@@ -1,0 +1,72 @@
+extends core/_template
+
+block title
+	title Главная
+
+block content
+	.main
+		.main__content
+			.main__content-top
+				img(src="./img/main-logo.svg" width="114" height="24" alt="").main__logo
+				.main__lang
+					include blocks/language-drop
+				
+			.main__content-form.-center
+				h1.main__content-title Welcome to Printegy App!
+
+				.main-slider
+					.main-slider__inner
+						.main-slider__item.-visible.js-main-slide(data-slide="0")
+							h2.main-slider__title Select products!
+							p.main-slider__text Choose your favorite products from the catalog, customize them and sell online under your brand!
+							.main-slider__btn
+								button.btn.-blue.js-check-slide(data-check-slide="1") Next
+						
+						.main-slider__item.-hidden.js-main-slide(data-slide="1")
+							h2.main-slider__title Add design and customize your products
+							p.main-slider__text Create custom products in minutes with free, easy-to-use design making tools!
+							.main-slider__btn
+								button.btn.-blue.js-check-slide(data-check-slide="2") Next
+
+						.main-slider__item.-hidden.js-main-slide(data-slide="2")
+							h2.main-slider__title Transfer your products!
+							p.main-slider__text Design print-on-demand products and publish them on your Shopify online store easily.
+							.main-slider__btn
+								button.btn.-blue.js-check-slide(data-check-slide="3") Next
+
+						.main-slider__item.-hidden.js-main-slide(data-slide="3")
+							h2.main-slider__title Setup your account
+							p.main-slider__text Turn your ideas into high-quality products and sell them online! We take care of the rest.
+							.main-slider__btn
+								a.btn.-blue(href="#") Start now!
+
+						.main-slider__dots
+							.main-slider__dots-item.js-check-slide.-active(data-check-slide="0")
+							.main-slider__dots-item.js-check-slide(data-check-slide="1")
+							.main-slider__dots-item.js-check-slide(data-check-slide="2")
+							.main-slider__dots-item.js-check-slide(data-check-slide="3")
+
+					
+
+			.main__content-bottom
+				.main__note You don't want to see it? 
+					a(href="#").main__note-link Skip now
+
+		.main__preview.-custom
+			picture.main__preview-pic.js-main-pic.-visible(data-pic="0")
+				source(srcset="./img/main-slide-1.webp, ./img/main-slide-1@2x.webp 2x" type="image/webp")
+				source(srcset="./img/main-slide-1.png, ./img/main-slide-1@2x.png 2x" type="image/png")
+				img(src="./img/main-slide-1.png" width="" height="" alt="").main__preview-pic-img
+			picture.main__preview-pic.js-main-pic.-hidden(data-pic="1")
+				source(srcset="./img/main-slide-2.webp, ./img/main-slide-2@2x.webp 2x" type="image/webp")
+				source(srcset="./img/main-slide-2.png, ./img/main-slide-2@2x.png 2x" type="image/png")
+				img(src="./img/main-slide-2.png" width="" height="" alt="").main__preview-pic-img
+			picture.main__preview-pic.js-main-pic.-hidden(data-pic="2")
+				source(srcset="./img/main-slide-3.webp, ./img/main-slide-3@2x.webp 2x" type="image/webp")
+				source(srcset="./img/main-slide-3.png, ./img/main-slide-3@2x.png 2x" type="image/png")
+				img(src="./img/main-slide-3.png" width="" height="" alt="").main__preview-pic-img
+			picture.main__preview-pic.js-main-pic.-hidden(data-pic="3")
+				source(srcset="./img/main-slide-4.webp, ./img/main-slide-4@2x.webp 2x" type="image/webp")
+				source(srcset="./img/main-slide-4.png, ./img/main-slide-4@2x.png 2x" type="image/png")
+				img(src="./img/main-slide-4.png" width="" height="" alt="").main__preview-pic-img
+				

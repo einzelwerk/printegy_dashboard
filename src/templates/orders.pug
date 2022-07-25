@@ -1,0 +1,79 @@
+extends core/_dashboard-template
+include mixins/ordertable-item
+
+block title
+    title Orders
+
+block content
+    .dashboard__products-head
+        h1.dashboard__title Orders
+    .orderspage__headblock.flex-c-b
+        h2.title GOTTESSHIRT
+        .__filtersblock.flex-c-b
+                .cselect#filter-limit.dr__el
+                    select#filter-select-limit(name="limit" style="display:none")
+                        option(value='20')
+                        option(value='50')
+                        option(value='100')
+                    .__title.dr__el-btn Show
+                        span 20 orders p/p
+                    .__content.dr__el-block
+                        div(data-value="20").cselect__label
+                            span 20 orders p/p
+                        div(data-value="50").cselect__label
+                            span 50 orders p/p
+                        div(data-value="100").cselect__label
+                            span 100 orders p/p
+
+                .cselect#filter-status.dr__el
+                    select#filter-select-status(name="status" style="display:none")
+                        option(value='All')
+                        option(value='Shipped')
+                        option(value='Cancelled')
+                        option(value='Paid')
+                    .__title(data-default="Option 0").dr__el-btn All Statuses
+                    .__content.dr__el-block
+                        div(data-value="all").cselect__label
+                            span All Statuses
+                        div(data-value="shipped").cselect__label
+                            span Shipped
+                        div(data-value="cancelled").cselect__label
+                            span Cancelled
+                        div(data-value="paid").cselect__label
+                            span Paid
+                button(type="button").btn.-blue.-medium.-wplus Export to CSV
+                    <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_1643_7041)">
+                    <path d="M12.4973 13.5559C12.5557 13.6212 12.6006 13.6975 12.6295 13.7802C12.6583 13.863 12.6706 13.9506 12.6656 14.0381C12.6606 14.1256 12.6384 14.2112 12.6002 14.2901C12.5621 14.369 12.5088 14.4396 12.4433 14.4979L11.386 15.4405C11.2048 15.6199 10.99 15.7616 10.7538 15.8576C10.5177 15.9536 10.2649 16.002 10.01 15.9999C9.74559 16.0004 9.48372 15.9487 9.23936 15.8478C8.99499 15.7469 8.77295 15.5988 8.58597 15.4119L7.55664 14.4959C7.49124 14.4377 7.43795 14.3671 7.39981 14.2883C7.36167 14.2095 7.33943 14.1239 7.33435 14.0365C7.3241 13.86 7.38439 13.6866 7.50197 13.5545C7.61955 13.4225 7.78478 13.3425 7.96132 13.3323C8.04873 13.3272 8.13628 13.3394 8.21898 13.3681C8.30168 13.3969 8.37791 13.4417 8.4433 13.4999L9.3333 14.2959V9.3332C9.3333 9.15639 9.40354 8.98682 9.52857 8.8618C9.65359 8.73677 9.82316 8.66654 9.99997 8.66654C10.1768 8.66654 10.3463 8.73677 10.4714 8.8618C10.5964 8.98682 10.6666 9.15639 10.6666 9.3332V14.2965L11.5566 13.5019C11.6886 13.3844 11.8618 13.3241 12.0381 13.3342C12.2145 13.3444 12.3797 13.4241 12.4973 13.5559ZM12.2373 4.9072C12.1228 4.87165 12.019 4.80829 11.935 4.72278C11.851 4.63728 11.7895 4.53228 11.756 4.4172C11.403 3.28392 10.682 2.30079 9.70727 1.62347C8.73251 0.946151 7.55966 0.613358 6.37444 0.677788C5.18921 0.742219 4.05935 1.20019 3.16376 1.97918C2.26817 2.75818 1.65804 3.81367 1.42998 4.97853C1.19597 6.15654 1.38482 7.37934 1.96331 8.43187C1.28894 8.78004 0.740583 9.33071 0.395257 10.0065C0.0499301 10.6824 -0.0750124 11.4494 0.0379793 12.1999C0.211747 13.0717 0.678521 13.858 1.36079 14.4279C2.04306 14.9979 2.89976 15.3173 3.78864 15.3332H5.33331C5.51012 15.3332 5.67969 15.263 5.80471 15.1379C5.92974 15.0129 5.99997 14.8434 5.99997 14.6665C5.99997 14.4897 5.92974 14.3202 5.80471 14.1951C5.67969 14.0701 5.51012 13.9999 5.33331 13.9999H3.78864C3.21928 13.9889 2.67011 13.787 2.2293 13.4265C1.7885 13.066 1.48163 12.5678 1.35798 12.0119C1.28559 11.5342 1.36458 11.0459 1.58386 10.6155C1.80315 10.1851 2.15172 9.8341 2.58064 9.61187C2.88637 9.4429 3.11326 9.16034 3.2122 8.82533C3.31115 8.49032 3.27418 8.12982 3.10931 7.82187C2.85045 7.32817 2.69764 6.78581 2.66068 6.22959C2.62372 5.67337 2.70343 5.11556 2.8947 4.59195C3.08596 4.06835 3.38456 3.5905 3.77134 3.18906C4.15811 2.78762 4.62453 2.47146 5.14066 2.26085C5.65679 2.05024 6.21125 1.94984 6.76846 1.96609C7.32567 1.98234 7.87333 2.11487 8.37631 2.35519C8.8793 2.59551 9.3265 2.93832 9.68923 3.36161C10.052 3.7849 10.3222 4.27933 10.4826 4.8132C10.5813 5.135 10.7571 5.42784 10.9947 5.66625C11.2323 5.90466 11.5245 6.08144 11.846 6.1812C12.7168 6.4462 13.4706 7.00166 13.9815 7.75501C14.4925 8.50836 14.7298 9.41408 14.654 10.3212C14.6038 11.0266 14.3461 11.7013 13.9133 12.2605C13.8055 12.4008 13.7579 12.578 13.7808 12.7534C13.8038 12.9287 13.8954 13.0878 14.0356 13.1955C14.1758 13.3033 14.3531 13.351 14.5285 13.328C14.7038 13.3051 14.8629 13.2134 14.9706 13.0732C15.558 12.3074 15.91 11.3874 15.984 10.4252C16.0847 9.21566 15.7677 8.00815 15.0859 7.00402C14.4041 5.99989 13.3987 5.25981 12.2373 4.9072Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_1643_7041">
+                    <rect width="16" height="16" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+
+    .ordespage__table 
+        .__head
+            .order__shop Shop
+            .order__order Order
+            .order__date Date
+            .order__customer Customer
+            .order__status Status
+            .order__profit Profit
+        +ordertable__item('9001', '05.02.2022', 'Andrei Bratuhin', 'Shipped', 'done', '€90.00')
+        +ordertable__item('9000', '05.02.2022', 'Piet Silberbauer', 'Shipped', 'done', '€24.75')
+        +ordertable__item('8999', '02.02.2022', 'Axel Steinhauer', 'Shipped', 'done', '€360.50')
+        +ordertable__item('8998', '01.02.2022', 'Yannik Steinberger', 'Cancelled', 'error', '€16.90')
+        +ordertable__item('8997', '31.01.2022', 'Katharina Kollmann', 'Paid', 'warning', '€21.25')
+        +ordertable__item('8996', '30.01.2022', 'Ellenor Porsche', 'Paid', 'warning', '€895.35')
+        +ordertable__item('8995', '26.01.2022', 'Simone Holz', 'Shipped', 'done', '€10.20')
+        +ordertable__item('8994', '25.01.2022', 'Simone Holz', 'Cancelled', 'error', '€39.50')
+        +ordertable__item('8993', '25.01.2022', 'Emmy Staebler', 'Cancelled', 'error', '€42.25')
+        +ordertable__item('8992', '25.01.2022', 'Simone Holz', 'Paid', 'warning', '€36.75')
+        +ordertable__item('8991', '22.01.2022', 'Ottilie Seidenstücker', 'Shipped', 'done', '€9.90')
+        +ordertable__item('693', '03.03.2022', 'Andrei Bratuhin', 'Confirmed', 'done', '€1990.00')
+       
+block scripts
+    script(src="js/dashboardproducts.js")
+    script(src="js/select.js")

@@ -19,6 +19,7 @@
       top: 0;
       right: 0;
       bottom: 0;
+      border: none;
     }
   }
   &__nav {
@@ -34,6 +35,12 @@
     margin-bottom: 12px;
     &:hover {
       background-color: #f6f7f8;
+      img {
+        filter: brightness(0%);
+      }
+      div {
+        color: #19191A;
+      }
     }
     &:last-child {
       margin-bottom: 0;
@@ -50,7 +57,8 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-    &--active {
+    &--active,
+    &--active:hover {
       background-color: #f3f4f6;
       &:after {
         opacity: 1;

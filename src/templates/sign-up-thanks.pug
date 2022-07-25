@@ -1,0 +1,35 @@
+extends core/_template
+
+block title
+	title Главная
+
+block content
+	.main
+		.main__content
+			.main__content-top
+				img(src="./img/main-logo.svg" width="114" height="24" alt="").main__logo
+				.main__lang
+					include blocks/language-drop
+				
+			.main__content-form.-top
+				.main__content-alert
+					.notification.-green You have successfully  signed up on Printegy
+				h1.main__content-title Thank you for signing up!
+				p.main__content-text We are welcome you on our board
+
+				.main-form__btn
+					a.btn.-blue(href="#") Go to login
+
+			.main__content-bottom
+				.main__note Already have an account? 
+					a(href="#").main__note-link Login
+
+		.main__preview
+			.main__preview-text
+				.main__preview-text-subtitle NEW EXPERIENCE
+				.main__preview-text-title STARTING HERE
+
+			picture.main__preview-pic
+				source(srcset="./img/main-pic-2.webp, ./img/main-pic-2@2x.webp 2x" type="image/webp")
+				source(srcset="./img/main-pic-2.png, ./img/main-pic-2@2x.png 2x" type="image/png")
+				img(src="./img/main-pic-2.png" width="522" height="519" alt="").main__preview-pic-img
