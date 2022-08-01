@@ -7,11 +7,18 @@
     position: absolute;
     &:checked {
       & + #{$c}__label {
+        color: #19191a;
+        &:before {
+          border: 1px solid rgba(1,24,46,.24);
+        }
         &:after {
           transform: translateY(0);
           opacity: 1;
         }
       }
+    }
+    &.is-invalid + label:before {
+      border-color: #ed0a34 !important;
     }
   }
   &__label {
@@ -29,7 +36,7 @@
       top: 50%;
       transform: translateY(-50%);
       background: #ffffff;
-      border: 1px solid #c6cdd4;
+      border: 1px solid rgba(1,24,46,.12);
       border-radius: 3px;
       width: 18px;
       height: 18px;
@@ -47,6 +54,9 @@
       transition: transform 0.2s, opacity 0.2s;
       transform: translateY(-4px);
       opacity: 0;
+    }
+    &:hover:before  {
+      border: 1px solid rgba(1,24,46,.24);
     }
     &-link {
       color: #0e7de2;

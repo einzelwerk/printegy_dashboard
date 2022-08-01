@@ -17,15 +17,15 @@ block content
 
 				form.main-form#login_form(action="") 
 					.main-form__line
+						input.main-form__input#login_form_name(type="text" placeholder="Username / E-mail" required)
 						label.main-form__lable(for="login_form_name") Login
-						input.main-form__input#login_form_name(type="text" placeholder="Username / E-mail")
 					.main-form__line
+						input.main-form__input#login_form_password(type="password" placeholder="***********************" required)
 						label.main-form__lable(for="login_form_password") Password
-						input.main-form__input#login_form_password(type="password" placeholder="***********************")
 					.main-form__line
-						.checkbox 
+						.checkbox
 							input.checkbox__input#remember_checkbox(type="checkbox")
-							label.checkbox__label(for="remember_checkbox") Remember this device for 30 days
+							label.checkbox__label(for="remember_checkbox") Remember this device for 30 <days></days>
 					.main-form__btn
 						button.btn.-blue(type="submit") Login
 

@@ -1,259 +1,100 @@
 !(function () {
-    const loginForm = document.getElementById('login_form');
-    const accountForm = document.getElementById('account_form');
-    const regForm = document.getElementById('reg_form');
-    const resetForm = document.getElementById('reset_form');
-    const newPasswordForm = document.getElementById('new_password_form');
-    const brandingForm = document.getElementById('branding_form');
-    const popDesignForm = document.getElementById('popdesign_form');
-    const billingForm = document.getElementById('billing_form');
-    const senderForm = document.getElementById('sender_form');
-
-
-    if (loginForm) {
-        new JustValidate(loginForm, {
-                errorFieldCssClass: 'is-invalid',
-                errorLabelStyle: {
-                    color: '#ed0a34',
-                },
-            })
-            .addField('#login_form_name', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#login_form_password', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .onSuccess((event) => {
-                console.log('Validation passes and form submitted', event);
-            });
-    }
-    if (accountForm) {
-        new JustValidate(accountForm, {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        let fields = form.querySelectorAll('[required]');
+        let validation = new JustValidate(form, {
             errorFieldCssClass: 'is-invalid',
             errorLabelStyle: {
                 color: '#ed0a34',
             },
-        })
-            .addField('#account_form_name', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#account_form_email', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#account_form_newp', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#account_form_cp', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .onSuccess((event) => {
-                console.log('Validation passes and form submitted', event);
-            });
-    }
-    if (billingForm) {
-        new JustValidate(billingForm, {
-                errorFieldCssClass: 'is-invalid',
-                errorLabelStyle: {
-                    color: '#ed0a34',
-                },
-            })
-            .addField('#billing_form_companyname', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#billing_form_email', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#billing_form_phone', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#billing_form_country', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#billing_form_state', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#billing_form_city', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#billing_form_zip', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .onSuccess((event) => {
-                console.log('Validation passes and form submitted', event);
-            });
-    }
-    if (senderForm) {
-        new JustValidate(senderForm, {
-                errorFieldCssClass: 'is-invalid',
-                errorLabelStyle: {
-                    color: '#ed0a34',
-                },
-            })
-            .addField('#sender_form_companyname', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#sender_form_email', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#sender_form_phone', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#sender_form_country', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#sender_form_state', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#sender_form_city', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#sender_form_zip', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .onSuccess((event) => {
-                console.log('Validation passes and form submitted', event);
-            });
-    }
-    if (regForm) {
-        new JustValidate(regForm, {
-                errorFieldCssClass: 'is-invalid',
-                errorLabelStyle: {
-                    color: '#ed0a34',
-                },
-            })
-            .addField('#reg_form_email', [{
+        });
+        fields.forEach(field => {
+            switch (field.type) {
+                case 'email':
+                    validation.addField(`#${field.id}`, [{
+                        rule: 'required',
+                        errorMessage: 'Field is required',
+                    }, {
+                        rule: 'email',
+                        errorMessage: 'Email is invalid!',
+                    }]);
+                    break;
+                case 'file':
+                    validation.addField(`#${field.id}`,[{
+                        rule: 'minFilesCount',
+                        value: 1,
+                        errorMessage: 'Field is required',
+                    }]);
+                    break;
+                default:
+                    validation.addField(`#${field.id}`,[{
+                        rule: 'required',
+                        errorMessage: 'Field is required',
+                    }]);
+            }
+
+            if (field.id == 'confirm-password') {
+                validation.addField(`#${field.id}`,[{
                     rule: 'required',
                     errorMessage: 'Field is required',
-                },
-                {
-                    rule: 'email',
-                    errorMessage: 'Email is invalid!',
-                },
-            ])
-            .addField('#reg_form_name', [{
-                    rule: 'required',
-                    errorMessage: 'Field is required',
-                },
-                {
-                    errorMessage: 'Not less than 6 symbols',
-                    rule: 'minLength',
-                    value: 6,
-                },
-            ])
-            .addField('#reg_form_password', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#reg_form_password_repeat', [{
-                validator: (value, fields) => {
-                    if (fields['#reg_form_password'] && fields['#reg_form_password'].elem) {
-                        const repeatPasswordValue = fields['#reg_form_password'].elem.value;
+                },{
+                    validator: (value, fields) => {
+                        if (fields['#password'] && fields['#password'].elem) {
+                            const repeatPasswordValue = fields['#password'].elem.value;
+                            return value === repeatPasswordValue;
+                        }
 
-                        return value === repeatPasswordValue;
-                    }
+                        return true;
+                    },
+                    errorMessage: 'Passwords should be the same',
+                }]);
+            }
+        });
 
-                    return true;
-                },
-                errorMessage: 'Passwords should be the same',
-            }, ])
-            .addField('#agree_checkbox', [{
-                rule: 'required',
-            }, ])
-            .onSuccess((event) => {
-                console.log('Validation passes and form submitted', event);
-            });
-    }
-    if (resetForm) {
-        new JustValidate(resetForm, {
-                errorFieldCssClass: 'is-invalid',
-                errorLabelStyle: {
-                    color: '#ed0a34',
-                },
-            })
-            .addField('#reset_login', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .onSuccess((event) => {
-                console.log('Validation passes and form submitted', event);
-            });
-    }
-    if (newPasswordForm) {
-        new JustValidate(newPasswordForm, {
-                errorFieldCssClass: 'is-invalid',
-                errorLabelStyle: {
-                    color: '#ed0a34',
-                },
-            })
-            .addField('#new_password', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, ])
-            .addField('#new_password_repeat', [{
-                validator: (value, fields) => {
-                    if (fields['#new_password'] && fields['#new_password'].elem) {
-                        const repeatPasswordValue = fields['#new_password'].elem.value;
-
-                        return value === repeatPasswordValue;
-                    }
-
-                    return true;
-                },
-                errorMessage: 'Passwords should be the same',
-            }, ])
-            .onSuccess((event) => {
-                console.log('Validation passes and form submitted', event);
-            });
-    }
-
-    if (brandingForm) {
-        let validate = new JustValidate(brandingForm, {
-                errorFieldCssClass: 'is-invalid',
-                errorLabelStyle: {
-                    color: '#ed0a34',
-                },
-            })
-
-        if (document.getElementById('store_url')) {
-            validate.addField('#store_url', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }]);
-        }
-
-        if (document.getElementById('support_email')) {
-            validate.addField('#support_email', [{
-                rule: 'required',
-                errorMessage: 'Field is required',
-            }, {
-                rule: 'email',
-                errorMessage: 'Enter valid e-mail',
-            }]);
-        }
-
-        validate.onSuccess((event) => {
+        validation.onSuccess((event) => {
             console.log('Validation passes and form submitted', event);
         });
+    });
+
+    // valid fields
+    document.addEventListener('keyup', event => {
+        if ([...event.target.classList].includes('main-form__input')) {
+            if (event.target.value) {
+                event.target.classList.add('is-valid');
+            } else {
+                event.target.classList.add('is-invalid');
+            }
+        }
+    })
+})();
+
+!(function () {
+
+    // price radio
+    const customPrice = document.getElementById('custom-price');
+    if (customPrice) {
+        document.addEventListener('change', event => {
+            if (event.target.type == 'radio' && event.target.name == 'price') {
+                if (event.target.value == 0) {
+                    customPrice.style.display = 'inline-block';
+                } else {
+                    customPrice.style.display = 'none';
+                    customPrice.querySelector('input').value = '';
+                }
+                changeAmount(event.target);
+            }
+
+            if (event.target.name == 'custom-price') {
+                changeAmount(event.target);
+            }
+        });
+    }
+
+    function changeAmount(target) {
+        const proccent = 1.5;
+        const amountPayPal = document.getElementById('amount');
+        if (!amountPayPal) return;
+        amountPayPal.innerText = target.value - (target.value * proccent / 100);
     }
 
 
@@ -330,16 +171,26 @@
         }
     }
 
-    // Textarea short message counter
+    // fields counter
+    const fields_counter = document.querySelectorAll('.fields-counter');
+    fields_counter.forEach(field => {
+        field.addEventListener('keyup', event => {
 
-    const textareaEl = document.getElementById('short_message');
-    if (textareaEl) {
-        const counterEl = document.getElementById('short_message_counter');
-
-        textareaEl.addEventListener('keyup', (e) => {
-            counterEl.innerHTML = `${textareaEl.value.length}/300`;
+            let counter = document.getElementById(field.dataset.counter);
+            if (counter) {
+                counter.innerHTML = `${field.value.length}/${field.getAttribute("maxlength")}`;
+            }
         });
-    }
+    });
+    // const textareaEl = document.getElementById('short_message');
+    // if (textareaEl) {
+    //     const counterEl = document.getElementById('short_message_counter');
+    //     console.log(textareaEl);
+    //
+    //     textareaEl.addEventListener('keyup', (e) => {
+    //         counterEl.innerHTML = `${textareaEl.value.length}/${textareaEl.getAttribute("maxlength")}`;
+    //     });
+    // }
 
     // profile dropdown
     function Dropdown(element, toggleSelector=".dr__el-btn", menuSelector=".dr__el-block", menuItemSelector=".dropdown-item"){

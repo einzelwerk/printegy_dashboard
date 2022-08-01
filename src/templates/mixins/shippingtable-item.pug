@@ -1,9 +1,9 @@
 mixin shippingtable__item(productname, productimg)
-    .shippingtable__item
-        .shipping__product
+    tr.shippingtable__item
+        td.shipping__product
             img(src=productimg, alt="")
             .title=productname
-        .shipping__region
+        td.shipping__region
             .item.at USA
             .item.at Europe (including UK)
             .item.at EFTA States
@@ -12,7 +12,7 @@ mixin shippingtable__item(productname, productimg)
             .item Japan
             .item Brazil
             .item Worldwide
-        .shipping__singleproduct
+        td.shipping__singleproduct
             .item €3.30
             .item €3.69
             .item €8.99
@@ -21,7 +21,7 @@ mixin shippingtable__item(productname, productimg)
             .item €3.69
             .item €4.05
             .item €7.59
-        .shipping__additionalproduct.toggle__elem__content
+        td.shipping__additionalproduct.toggle__elem__content
             .item +€1.30
             .item +€1.25
             .item +€1.00
@@ -30,12 +30,13 @@ mixin shippingtable__item(productname, productimg)
             .item +€1.25
             .item +€2.25
             .item +€2.49
-        button.shipping__show.toggle__elem(type="button")
-            .status Show
-            .status.status-hide Hide
-            <svg class="icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.91634 2.83398L3.99967 5.75065L1.08301 2.83398" stroke="#0E86F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        td
+            button.shipping__show.toggle__elem(type="button")
+                .status Show
+                .status.status-hide Hide
+                <svg class="icon" width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.91634 2.83398L3.99967 5.75065L1.08301 2.83398" stroke="#0E86F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
 
 
 

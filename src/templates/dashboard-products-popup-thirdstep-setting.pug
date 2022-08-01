@@ -35,21 +35,22 @@ block overlays
                         </svg>
                 .editdesign__popup
                     .__form
-                        form(action="/")
+                        form(action="/" method="post")
                             .main-form__line
+                                input.main-form__input.fields-counter#reg_form_name(data-counter="counter-title" name="title" type="text" placeholder="Write your design title" data-help="short_message_counter" maxlength="30" required)
                                 label.main-form__lable(for="reg_form_name") Design title*
-                                input.main-form__input#reg_form_name(type="text" placeholder="Write your design title" data-help="short_message_counter" maxlength="30")
-                                .branding-card__count#short_message_counter 0/30
-                                .branding-card__line.stm16
-                                    textarea(placeholder="Placeholder" maxlength="300").branding-card__textarea
-                                    label(for="short_message").branding-card__label Description*
-
+                                .branding-card__count#counter-title 0/30
+                            .main-form__line
+                                textarea#short_message(placeholder="Placeholder" maxlength="300" name="message" data-counter="counter-message" required).branding-card__textarea.main-form__input.fields-counter
+                                label(for="short_message").branding-card__label Description*
+                                .branding-card__count#counter-message 0/300
                             .btns.flex-co
-                                button(type="button").btn.-blue Save changes
+                                button(type="submit").btn.-blue Save changes
                                 .btn-cancel Cancel
 
 block scripts
     script(src="js/loader.js")
+    script(src="js/just-validate.production.min.js")
     script(src="js/dashboardproducts.js")
     script(src="js/popupsetting.js")
     script(src="js/popuptable.js")

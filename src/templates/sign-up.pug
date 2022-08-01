@@ -17,20 +17,20 @@ block content
 
 				form.main-form#reg_form(action="")
 					.main-form__line
+						input.main-form__input#reg_form_email(type="email" placeholder="example@email.com" required)
 						label.main-form__lable(for="reg_form_email") Email
-						input.main-form__input#reg_form_email(type="email" placeholder="example@email.com")
 					.main-form__line
+						input.main-form__input#reg_form_name(type="text" placeholder="Not less than 6 symbols" required)
 						label.main-form__lable(for="reg_form_name") Username
-						input.main-form__input#reg_form_name(type="text" placeholder="Not less than 6 symbols")
 					.main-form__line
+						input.main-form__input#reg_form_password(type="password" placeholder="***********************" required)
 						label.main-form__lable(for="reg_form_password") Password
-						input.main-form__input#reg_form_password(type="password" placeholder="***********************")
 					.main-form__line
+						input.main-form__input#reg_form_password_repeat(type="password" placeholder="***********************" required)
 						label.main-form__lable(for="reg_form_password_repeat") Confirm password
-						input.main-form__input#reg_form_password_repeat(type="password" placeholder="***********************")
 					.main-form__line
 						.checkbox 
-							input.checkbox__input#agree_checkbox(type="checkbox")
+							input.checkbox__input#agree_checkbox(type="checkbox" required)
 							label.checkbox__label(for="agree_checkbox") I agree to 
 								a.checkbox__label-link(href="#") the terms and conditions
 					.main-form__btn

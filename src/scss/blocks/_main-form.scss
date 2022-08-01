@@ -2,8 +2,12 @@
   &__line {
     position: relative;
     margin-bottom: 26px;
+    padding-top: 22px;
     &:last-child {
       margin-bottom: 0;
+    }
+    &:hover label {
+      color: #19191a;
     }
   }
   &__lable {
@@ -12,7 +16,11 @@
     font-size: 12px;
     line-height: 14px;
     color: #919399;
-    margin-bottom: 8px;
+    transition: color .3s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
   }
   &__input {
     background: #ffffff;
@@ -23,16 +31,27 @@
     font-size: 14px;
     line-height: 20px;
     color: #19191a;
-    padding: 13px 14px;
+    padding: 9px 14px;
     width: 100%;
     transition: color 0.3s, border-color 0.3s;
+    &[value=""] {
+      border: 1px solid rgba(1, 24, 46, 0.12);
+      &+label {
+        color: #919399;
+      }
+    }
     &:active,
     &:focus,
-    &:hover {
+    &:hover,
+    &.just-validate-success-field,
+    &.is-valid {
       border: 1px solid rgba(1, 24, 46, 0.24);
+      &+label {
+        color: #19191a;
+      }
     }
     &.is-invalid {
-      border-color: #ed0a34;
+      border-color: #ed0a34 !important;
     }
   }
   &__btn {

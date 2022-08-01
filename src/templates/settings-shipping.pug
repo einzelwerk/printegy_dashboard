@@ -10,8 +10,7 @@ block content
 
     .settingspage__tabs
         a(href="").__tab Address 
-        a(href="").__tab.active Shipping 
-        a(href="").__tab Preferences 
+        a(href="").__tab.active Shipping
     .shipping__content__wrapper 
         h2.title18.__title Shipping Rules
         .shipping__blocks.flex-c
@@ -27,19 +26,21 @@ block content
                         p With our reliable partner DHL, you and your customers will get the best possible shipping experience.
     .shippingprices 
         h2.title18 Shipping Prices
-        .__table.stblock
-            .__head
-                .shipping__product Product
-                .shipping__region Region
-                .shipping__singleproduct Single Product
-                .shipping__additionalproduct Additional Product
-                .shipping__show Show / Hide
-            +shippingtable__item('Phone cases', './img/shippingprice1.png')
-            +shippingtable__item('Shirts', './img/shippingprice2.png')
-            +shippingtable__item('Hoodies, sweatshirts, jackets and pants', './img/shippingprice3.png')
-            +shippingtable__item('All-over print clothing and textiles', './img/shippingprice4.png')
-            +shippingtable__item('Face coverings', './img/shippingprice5.png')
-            +shippingtable__item('Banners and art', './img/shippingprice6.png')
+        table.__table.stblock
+            thead
+                tr
+                    td.shipping__product Product
+                    td.shipping__region.shipping__toggle.hidden Region
+                    td.shipping__singleproduct.shipping__toggle.hidden Single Product
+                    td.shipping__additionalproduct.shipping__toggle.hidden Additional Product
+                    td.shipping__show Show / Hide
+            tbody
+                +shippingtable__item('Phone cases', './img/shippingprice1.png')
+                +shippingtable__item('Shirts', './img/shippingprice2.png')
+                +shippingtable__item('Hoodies, sweatshirts, jackets and pants', './img/shippingprice3.png')
+                +shippingtable__item('All-over print clothing and textiles', './img/shippingprice4.png')
+                +shippingtable__item('Face coverings', './img/shippingprice5.png')
+                +shippingtable__item('Banners and art', './img/shippingprice6.png')
 
 
 block scripts

@@ -30,8 +30,8 @@ block content
                     +item__design-popup("./img/designimg2.png") 
                 .__design__sidemenu
                     .dz#dz
+                        input(type="file" accept="image/*" required).dz__input#inputFile
                         .dz__area
-                            input(type="file" accept="image/*").dz__input#inputFile
                             .dz__area-content
                                 .dz__icon 
                                 .dz__btn Add Image
@@ -41,10 +41,16 @@ block content
                                 img(src="", alt="")#inputPreview.dz__area-pic-img
                         .dz__info
                             .dz__info-name#inputFileName
-                            .dz__info-link Choose another file
+                            label.dz__info-link(for="inputFile") Choose another file
+                            button#buttonFileRemove.dz__info-remove(type="button")
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1544 1.84546L1.84534 12.1545" stroke="#ED0A34" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12.1544 12.1545L1.84534 1.84546" stroke="#ED0A34" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                span Delete
                     .main-form__line
+                        input.main-form__input#reg_form_name(type="text" placeholder="Write your design title" required)
                         label.main-form__lable(for="reg_form_name") Design title*
-                        input.main-form__input#reg_form_name(type="text" placeholder="Write your design title")
                     button(type="submit").btn.-blue.-medium Add design
 
 block overlays
@@ -58,13 +64,14 @@ block overlays
                         <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.8045 0.195191C15.6795 0.0702103 15.51 0 15.3332 0C15.1564 0 14.9869 0.0702103 14.8619 0.195191L7.99986 7.05719L1.13786 0.195191C1.01284 0.0702103 0.8433 0 0.666524 0C0.489748 0 0.320209 0.0702103 0.195191 0.195191C0.0702103 0.320209 0 0.489748 0 0.666524C0 0.8433 0.0702103 1.01284 0.195191 1.13786L7.05719 7.99986L0.195191 14.8619C0.0702103 14.9869 0 15.1564 0 15.3332C0 15.51 0.0702103 15.6795 0.195191 15.8045C0.320209 15.9295 0.489748 15.9997 0.666524 15.9997C0.8433 15.9997 1.01284 15.9295 1.13786 15.8045L7.99986 8.94252L14.8619 15.8045C14.9869 15.9295 15.1564 15.9997 15.3332 15.9997C15.51 15.9997 15.6795 15.9295 15.8045 15.8045C15.9295 15.6795 15.9997 15.51 15.9997 15.3332C15.9997 15.1564 15.9295 14.9869 15.8045 14.8619L8.94252 7.99986L15.8045 1.13786C15.9295 1.01284 15.9997 0.8433 15.9997 0.666524C15.9997 0.489748 15.9295 0.320209 15.8045 0.195191Z" fill="#AAADB3"/>
                         </svg>
-                form(method="post" action="#").editdesign__popup
+                form(method="post" action="/").editdesign__popup
                     .__image
                         img(src="./img/designimg3.png", alt="")
                     .__desc
                         .main-form__line
+                            input.main-form__input.fields-counter#reg_form_name(name="title" maxlength="30" data-counter="counter-title" type="text" placeholder="Write your design title" required)
                             label.main-form__lable(for="reg_form_name") Design title*
-                            input.main-form__input#reg_form_name(type="text" placeholder="Write your design title")
+                            .branding-card__count#counter-title 0/30
                         .remove-desing.redwicon
                             <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.5 3.5H2.5" stroke="#ED0A34" stroke-linecap="round" stroke-linejoin="round"/>
@@ -77,5 +84,6 @@ block overlays
                             button.btn-cancel.crs(type="button" data-modal="editdesign") Cancel
 
 block scripts
+    script(src="js/just-validate.production.min.js")
     script(src="js/dashboardproducts.js")
     script(src="js/popupsetting.js")

@@ -15,8 +15,8 @@ block content
 
                 .__adressblock
                     .dz#dz
+                        input(type="file" accept="image/*" required).dz__input#inputFile
                         .dz__area
-                            input(type="file" accept="image/*").dz__input#inputFile
                             .dz__area-content.userprofile
                                 .dz__icon
                                 .dz__btn Add Image
@@ -24,8 +24,10 @@ block content
                                 .dz__note.recommended Recommended size: 6000 x 6000 px Image formats: JPG, JPEG, PNG, GIF, WEBP
                             .dz__area-pic
                                 img(src="", alt="")#inputPreview.dz__area-pic-img
+
                         .dz__info
                             .dz__info-name#inputFileName
+                            label.dz__info-link(for="inputFile") Choose another file
                             button#buttonFileRemove.dz__info-remove(type="button")
                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.1544 1.84546L1.84534 12.1545" stroke="#ED0A34" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,18 +43,18 @@ block content
                 .__adressblock
                     .forminputs__wrapper
                         .main-form__line
+                            input.main-form__input#account_form_name(type="text" placeholder="Gottesshirt LLC." value="" required)
                             label.main-form__lable(for="account_form_name") Name
-                            input.main-form__input#account_form_name(type="text" placeholder="Gottesshirt LLC." value="")
                         .main-form__line
+                            input.main-form__input#account_form_email(type="email" placeholder="dima.shatunov@gmail.com" value="" required)
                             label.main-form__lable(for="account_form_email") Email
-                            input.main-form__input#account_form_email(type="email" placeholder="dima.shatunov@gmail.com" value="")
                     .forminputs__wrapper
                         .main-form__line
-                            label.main-form__lable(for="account_form_newp") New password
-                            input.main-form__input#account_form_newp(type="password" placeholder="" value="")
+                            input.main-form__input#password(type="password" placeholder="" value="" required)
+                            label.main-form__lable(for="password") New password
                         .main-form__line
-                            label.main-form__lable(for="account_form_cp") Confirm new password
-                            input.main-form__input#account_form_cp(type="password" placeholder="" value="")
+                            input.main-form__input#confirm-password(type="password" placeholder="" value="" required)
+                            label.main-form__lable(for="confirm-password") Confirm new password
         .formbtns__wrapper
             .main-form__btn
                 button.btn.cancel(type="button") Cancel

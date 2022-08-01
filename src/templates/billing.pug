@@ -79,39 +79,62 @@ block content
                     p.label-title Bank transfer
                     input(type="radio" name="payment" value="2").toggler
 
-            //p.desc.stm12 You need to have a credit card on record before we can process, fulfill and ship your orders.
-
             .carddata.payment-content#payment-1
                 form.main-form(action="")
-                    .carddata__wrapper
-                        .main-form__line
-                            label.main-form__lable(for="carddata__number") Card number
-                            input.main-form__input#carddata__number(type="text" placeholder="1222 8799 3666 0000")
-                        .main-form__line
-                            label.main-form__lable(for="carddata__date") Expiry date
-                            input.main-form__input#carddata__date(type="text" placeholder="MM / YYYY")
-                        .main-form__line
-                            label.main-form__lable(for="carddata__code") CVV/CVC
-                            input.main-form__input#carddata__code(type="password" placeholder="CVC")
-                    
+                    p.desc If you deposit via Paypal, your wallet will be credited in real time, but there will be a payment fee of 1.5%. The minimum amount per charge is 15 €.
+                    .prices
+                        label.price-label
+                            input(type="radio" name="price" value="100")
+                            span.price-input 100 €
+                        label.price-label
+                            input(type="radio" name="price" value="250" checked)
+                            span.price-input 250 €
+                        label.price-label
+                            input(type="radio" name="price" value="500")
+                            span.price-input 500 €
+                        br
+                        label.price-label
+                            input(type="radio" name="price" value="697")
+                            span.price-input 697 €
+                                i.desc-icon
+                                    .desc-info
+                                        h3 Deposit
+                                        p Please note that only transfers with the subject line below this disclaimer allow an automated matching. Deposits without this subject are transferred back to your bank account.
+                        label.price-label
+                            input(type="radio" name="price" value="0")
+                            span.price-input Free value
+                        label.price-label.custom-price#custom-price
+                            input.price-input(type="number" name="custom-price" value="" placeholder="125.00")
+
+                    .main-form__footer
+                        p Amount less fees:
+                            span#amount 246.25
+                            span €
                     .main-form__btn
-                        button.btn.-blue(type="submit") Connect card via PayPal
+                        button.btn.-blue(type="submit") Charge wallet
+                        p I accept the <a href="#">Terms and Conditions</a>, <a href="#">Right of withdrawal</a> and <a href="#">Privacy Policy</a>.
+
             .carddata.payment-content.d-none#payment-2
+                .desc You may deposit money into your wallet via bank transfers.
+                        i.desc-icon
+                            .desc-info
+                                h3 Deposit
+                                p You may deposit money into your wallet via bank transfers. The transferred balance will be visible in your wallet once we receive the deposit in our account. It usually takes between 24 to 48 hours to complete the transaction. Please note that only transfers with the subject line below this disclaimer allow an automated matching. Deposits without this subject are transferred back to your bank account.
+
                 .desc
-                    .desc-icon You may deposit money into your wallet via bank transfers.
-                        .desc-info
-                            h3 Deposit
-                            p You may deposit money into your wallet via bank transfers. The transferred balance will be visible in your wallet once we receive the deposit in our account. It usually takes between 24 to 48 hours to complete the transaction. Please note that only transfers with the subject line below this disclaimer allow an automated matching. Deposits without this subject are transferred back to your bank account.
-                .desc
-                    .desc-icon You may withdraw balance back to your bank account.
-                        .desc-info
-                            h3 Withdraw
-                            p You may withdraw any balance from your wallet back to your bank account free of charge. Please contact the customer support to request a payout
-                p.stm16 Receiver: Printegy GmbH
-                p IBAN: DE10 3707 0024 0397 3385 03
-                p BIC: DEUTDEDBKOE
-                p Reference:
-                    strong  DEPOSIT-61C29D73
+                   p Receiver: Printegy GmbH
+                   p IBAN: DE10 3707 0024 0397 3385 03
+                   p BIC: DEUTDEDBKOE
+                   p Reference:
+                       strong  DEPOSIT-61C29D73
+
+                .carddata__footer
+                    div You may withdraw balance back to your bank account.
+                        i.desc-icon
+                            .desc-info
+                                h3 Withdraw
+                                p You may withdraw any balance from your wallet back to your bank account free of charge. Please contact the customer support to request a payout
+
 
 
         .billinginfo__doubleblock.outstanding__balance
@@ -135,42 +158,56 @@ block content
     .paymentspage__headblock.flex-c-b
         h2.title Payment history
         .__filtersblock.flex-c-b
-            .cselect#contacts-theme(data-state="").dr__el
-                .__title(data-default="Option 0").dr__el-btn Show 20 products
-                  
+            .cselect#contacts-theme.dr__el
+                select#contacts-select-theme(name="limit" style="display:none")
+                    option(value='20')
+                    option(value='50')
+                    option(value='100')
+                .__title.dr__el-btn(data-prefix="Show") Show
+                    span 20 products
                 .__content.dr__el-block
-                    a(href="").cselect__label  
-                        span 20
-                    a(href="").cselect__label 
-                        span 20
-                    a(href="").cselect__label  
-                        span 20
-            .cselect#contacts-theme-second(data-state="").dr__el
-                .__title(data-default="Option 0").dr__el-btn All Statuses
-                   
+                    div(data-value="20").cselect__label
+                        span 20 products
+                    div(data-value="50").cselect__label
+                        span 50 products
+                    div(data-value="100").cselect__label
+                        span 100 products
+            .cselect#contacts-theme-second.dr__el
+                select#contacts-select-status(name="status" style="display:none")
+                    option(value='All')
+                        option(value='Shipped')
+                        option(value='Cancelled')
+                        option(value='Paid')
+                .__title.dr__el-btn All Statuses
                 .__content.dr__el-block
-                    a(href="").cselect__label  
-                        span All
-                    a(href="").cselect__label  
-                        span All
-                    a(href="").cselect__label  
-                        span All
-    .paymentspage__table 
-        .__head
-            .order__id ID
-            .order__shop Shop
-            .order__approved Approved
-            .order__type Type
-            .order__prodiver Provider
-            .order__amount Amount
-            .order__order Order
-            .order__data Date
-            .order__pdf PDF
-        +paymenttable__item('69358', 'Yes', 'done', 'Payment', 'Credit', '€2490.00', '9000', '05.02.2022')
-        +paymenttable__item('69358', 'Yes', 'done', 'Invoice', 'Refund', '€2490.00', '9000', '05.02.2022')
-        +paymenttable__item('69358', 'Yes', 'done', 'Invoice', 'PayPal', '€2490.00', '9000', '05.02.2022')
-        +paymenttable__item('69358', 'No', 'error', 'Payment', 'Stripe', '€2490.00', '9000', '05.02.2022')
-        +paymenttable__item('69358', 'Yes', 'done', 'Dropshipping', 'Stripe', '€2490.00', '9000', '05.02.2022')
+                    div(data-value="all").cselect__label
+                        span All Statuses
+                    div(data-value="shipped").cselect__label
+                        span Shipped
+                    div(data-value="cancelled").cselect__label
+                        span Cancelled
+                    div(data-value="paid").cselect__label
+                        span Paid
+    table.paymentspage__table
+        thead
+            tr
+                th.order__id ID
+                th.order__shop Shop
+                th.order__approved Approved
+                th.order__type Type
+                th.order__prodiver Provider
+                th.order__amount Amount
+                th.order__order Order
+                th.order__data Date
+                th.order__pdf PDF
+        tbody
+            +paymenttable__item('69358', 'Yes', 'done', 'Payment', 'Credit', '€2490.00', '9000', '05.02.2022')
+            +paymenttable__item('69358', 'Yes', 'done', 'Invoice', 'Refund', '€2490.00', '9000', '05.02.2022')
+            +paymenttable__item('69358', 'Yes', 'done', 'Invoice', 'PayPal', '€2490.00', '9000', '05.02.2022')
+            +paymenttable__item('69358', 'No', 'error', 'Payment', 'Stripe', '€2490.00', '9000', '05.02.2022')
+            +paymenttable__item('69358', 'Yes', 'done', 'Dropshipping', 'Stripe', '€2490.00', '9000', '05.02.2022')
 
 block scripts
     script(src="js/dashboardproducts.js")
+    script(src="js/just-validate.production.min.js")
+    script(src="js/select.js")

@@ -7,26 +7,28 @@ block content
     .dashboard__products-head
         h1.dashboard__title Messages
 
-    .messagestable.usertable.stblock
-        .__header
-            .shop Shop 
-            .title Title 
-            .message Message
-            .posted Posted at
-        .__item
-            .shop GOTTESSHIRT 
-            .title Collection publish competed 
-            .message Your collection “1.png” has been published
-            .posted 2022-02-18  19:41:58
-        .__item
-            .shop GOTTESSHIRT 
-            .title Collection publish competed 
-            .message Your collection “1.png” has been published
-            .posted 2022-02-18  19:41:58
-        .__item
-            .shop GOTTESSHIRT 
-            .title Collection publish competed 
-            .message Your collection “1.png” has been published
-            .posted 2022-02-18  19:41:58
+    table.messagestable.usertable.stblock
+        thead
+            tr
+                th.shop Shop
+                th.title Title
+                th.message Message
+                th.posted Posted at
+        tbody
+            tr.__item
+                td.shop GOTTESSHIRT
+                td.title Collection publish competed
+                td.message Your collection “1.png” has been published
+                td.posted 2022-02-18  19:41:58
+            tr.__item
+                td.shop GOTTESSHIRT
+                td.title Collection publish competed
+                td.message Your collection “1.png” has been published
+                td.posted 2022-02-18  19:41:58
+            tr.__item
+                td.shop GOTTESSHIRT
+                td.title Collection publish competed
+                td.message Your collection “1.png” has been published
+                td.posted 2022-02-18  19:41:58
 block scripts
     script(src="js/dashboardproducts.js")

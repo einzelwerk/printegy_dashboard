@@ -7,17 +7,19 @@ block content
     .dashboard__products-head
         h1.dashboard__title My Stores
 
-    .mystorestable.usertable.stblock
-        .__header
-            .store Store 
-            .status Status 
-            .actions Actions 
-        .__item
-            .store GOTTESSHIRT 
-            .status.done Active 
-            .actions.flex-co
-                button.btn.-reverse(type="button") Visit
-                button.btn.-blue(type="button") Settings
+    table.mystorestable.usertable.stblock
+        thead
+            tr
+                th.store Store
+                th.status Status
+                th.actions Actions
+        tbody
+            tr.__item
+                td.store GOTTESSHIRT
+                td.status.done Active
+                td.actions.flex-co
+                    button.btn.-reverse(type="button") Visit
+                    button.btn.-blue(type="button") Settings
 
     a(href="").usertablelinkto.p14-600.stm Connect another Shopify Store
    

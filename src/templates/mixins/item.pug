@@ -1,12 +1,12 @@
 include smallbtn
 include salebtn
 
-mixin item__block
+mixin item__block(icon='./img/salepic.svg')
 	.item__block(style="display:none")
 		.item__block__top
 			img(src="./img/image141.png" width="220" height="204" alt="").main__preview-pic-img
 			.item__block__top-sidebtns
-				+salebtn('./img/salepic.svg')
+				+salebtn(icon)
 			.item__block__top-actionbtns
 				+smallbtn('./img/PencilSimple.svg')
 				+smallbtn('./img/DownloadSimple.svg')

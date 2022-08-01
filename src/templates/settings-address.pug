@@ -10,8 +10,7 @@ block content
 
     .settingspage__tabs
         a(href="").__tab.active Address 
-        a(href="").__tab Shipping 
-        a(href="").__tab Preferences 
+        a(href="").__tab Shipping
     .settingspage__content__wrapper 
 
         .settingspage__addressblock
@@ -23,35 +22,35 @@ block content
             .__adressblock
                 form.main-form#billing_form(action="")
                     .main-form__line
+                        input.main-form__input#billing_form_companyname(type="text" name="companyname" placeholder="Gottesshirt LLC." value="" required)
                         label.main-form__lable(for="billing_form_companyname") Company / Store name
-                        input.main-form__input#billing_form_companyname(type="text" name="companyname" placeholder="Gottesshirt LLC." value="")
                     .forminputs__wrapper.mailgrid
                         .main-form__line
+                            input.main-form__input#billing_form_email(type="email" name="email" placeholder="dima.shatunov@gmail.com" value="" required)
                             label.main-form__lable(for="billing_form_email") Email
-                            input.main-form__input#billing_form_email(type="email" name="email" placeholder="dima.shatunov@gmail.com" value="")
                         .main-form__line
+                            input.main-form__input#billing_form_phone(type="tel" name="phone" placeholder="+49 9039580" value="" required)
                             label.main-form__lable(for="billing_form_phone") Phone
-                            input.main-form__input#billing_form_phone(type="tel" name="phone" placeholder="+49 9039580" value="")
                     .main-form__line
-                        label.main-form__lable(for="billing_form_address1") Address 1
                         input.main-form__input#billing_form_address1(type="text" name="address1" placeholder="Berlin, Deutsch Schtrazze, 61/B" value="")
+                        label.main-form__lable(for="billing_form_address1") Address 1
                     .main-form__line
-                        label.main-form__lable(for="billing_form_address2").noactive Address 2
-                        input.main-form__input#billing_form_address2(type="text" name="address2" placeholder="Placeholder").noactive
+                        input.main-form__input#billing_form_address2(type="text" name="address2" placeholder="Placeholder")
+                        label.main-form__lable(for="billing_form_address2") Address 2
                     .forminputs__wrapper
                         .main-form__line
-                            label.main-form__lable(for="billing_form_country") Country
                             input.main-form__input#billing_form_country(type="text" name="country" placeholder="Germany" value="")
+                            label.main-form__lable(for="billing_form_country") Country
                         .main-form__line
-                            label.main-form__lable(for="billing_form_state").noactive State
-                            input.main-form__input#billing_form_state(type="text" name="state" placeholder="State" value="").noactive
+                            input.main-form__input#billing_form_state(type="text" name="state" placeholder="State" value="")
+                            label.main-form__lable(for="billing_form_state") State
                     .forminputs__wrapper
                         .main-form__line
-                            label.main-form__lable(for="billing_form_city") City
                             input.main-form__input#billing_form_city(type="text" name="city" placeholder="Berlin" value="")
+                            label.main-form__lable(for="billing_form_city") City
                         .main-form__line
-                            label.main-form__lable(for="billing_form_zip") Postal / ZIP Code
                             input.main-form__input#billing_form_zip(type="text" name="zip" placeholder="44350" value="")
+                            label.main-form__lable(for="billing_form_zip") Postal / ZIP Code
                     .formbtns__wrapper
                         .main-form__btn
                             button.btn.cancel(type="button") Cancel
@@ -74,35 +73,35 @@ block content
             .__adressblock.hidden#form-sender-address
                 form.main-form#sender_form(action="")
                     .main-form__line
-                        label.main-form__lable(for="sender_form_companyname") Company / Store name
                         input.main-form__input#sender_form_companyname(type="text" name="companyname" placeholder="" value="Gottesshirt LLC.")
+                        label.main-form__lable(for="sender_form_companyname") Company / Store name
                     .forminputs__wrapper.mailgrid
                         .main-form__line
-                            label.main-form__lable(for="sender_form_email") Email
                             input.main-form__input#sender_form_email(type="email" name="email" placeholder="" value="dima.shatunov@gmail.com")
+                            label.main-form__lable(for="sender_form_email") Email
                         .main-form__line
-                            label.main-form__lable(for="sender_form_phone") Phone
                             input.main-form__input#sender_form_phone(type="tel" name="phone" placeholder="" value="+49 9039580")
+                            label.main-form__lable(for="sender_form_phone") Phone
                     .main-form__line
-                        label.main-form__lable(for="sender_form_address1") Address 1
                         input.main-form__input#sender_form_address1(type="text" name="address1" placeholder="" value="Berlin, Deutsch Schtrazze, 61/B")
+                        label.main-form__lable(for="sender_form_address1") Address 1
                     .main-form__line
-                        label.main-form__lable(for="sender_form_address2") Address 2
                         input.main-form__input#sender_form_address2(type="text" name="address2" placeholder="Placeholder")
+                        label.main-form__lable(for="sender_form_address2") Address 2
                     .forminputs__wrapper
                         .main-form__line
-                            label.main-form__lable(for="sender_form_country") Country
                             input.main-form__input#sender_form_country(type="text" name="country" placeholder="Germany" value="")
+                            label.main-form__lable(for="sender_form_country") Country
                         .main-form__line
-                            label.main-form__lable(for="sender_form_state") State
                             input.main-form__input#sender_form_state(type="text" name="state" placeholder="State" value="")
+                            label.main-form__lable(for="sender_form_state") State
                     .forminputs__wrapper
                         .main-form__line
-                            label.main-form__lable(for="sender_form_city") City
                             input.main-form__input#sender_form_city(type="text" name="city" placeholder="Berlin" value="")
+                            label.main-form__lable(for="sender_form_city") City
                         .main-form__line
-                            label.main-form__lable(for="sender_form_zip") Postal / ZIP Code
                             input.main-form__input#sender_form_zip(type="text" name="zip" placeholder="44350" value="")
+                            label.main-form__lable(for="sender_form_zip") Postal / ZIP Code
                     .formbtns__wrapper
                         .main-form__btn
                             button.btn.cancel(type="button") Cancel

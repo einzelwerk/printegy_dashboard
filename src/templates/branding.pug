@@ -7,7 +7,7 @@ block content
 	h1.dashboard__title Branding
 	.dashboard__inner
 		.branding
-			form(action="/").branding__form#branding_form
+			form(action="/").branding__form
 				.branding__row
 					.branding__col.-big
 						.branding-card
@@ -22,7 +22,7 @@ block content
 										.
 											.
 									.branding-card__btn
-										a(href="#").btn.-white.-blue-text.-compact More information
+										a(href="https://printegy.de/markenbildung").btn.-white.-blue-text.-compact More information
 					.branding__col.-mid
 						.branding-card.-pic
 							.branding-card__content.-short
@@ -37,8 +37,8 @@ block content
 								.branding-card__num 01
 							.branding-card__inner
 								.dz#dz
+									input(type="file" accept="image/*" required).dz__input#inputFile
 									.dz__area
-										input(type="file" accept="image/*").dz__input#inputFile
 										.dz__area-content
 											.dz__icon 
 											.dz__btn Add Image
@@ -48,6 +48,12 @@ block content
 									.dz__info
 										.dz__info-name#inputFileName
 										label.dz__info-link(for="inputFile") Choose another file
+										button#buttonFileRemove.dz__info-remove(type="button")
+											<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12.1544 1.84546L1.84534 12.1545" stroke="#ED0A34" stroke-linecap="round" stroke-linejoin="round"/>
+											<path d="M12.1544 12.1545L1.84534 1.84546" stroke="#ED0A34" stroke-linecap="round" stroke-linejoin="round"/>
+											</svg>
+											span Delete
 									
 					.branding__col
 						.branding-card
@@ -56,10 +62,10 @@ block content
 								.branding-card__num 02
 							.branding-card__content
 								.branding-card__line
-									input(type="text" placeholder="example.com").branding-card__input#store_url
+									input(type="text" placeholder="example.com" required).branding-card__input#store_url
 									label(for="store_url").branding-card__label#store_url Store url*
 								.branding-card__line
-									input(type="text" placeholder="example@mail.com").branding-card__input#support_email
+									input(type="email" placeholder="example@mail.com" required).branding-card__input#support_email
 									label(for="support_email").branding-card__label Customer support e-mail*
 
 					.branding__col
@@ -69,7 +75,7 @@ block content
 								.branding-card__num 03
 							.branding-card__content
 								.branding-card__line
-									textarea(placeholder="Placeholder" maxlength="300").branding-card__textarea#short_message
+									textarea(placeholder="Placeholder" maxlength="300" data-counter="short_message_counter" required).branding-card__textarea.main-form__input.fields-counter#short_message
 									label(for="short_message").branding-card__label Optional
 									.branding-card__count#short_message_counter 0/300
 				.branding__btns

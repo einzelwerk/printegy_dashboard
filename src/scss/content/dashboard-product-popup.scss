@@ -13,9 +13,7 @@
                 .notify {
                     padding: 10px 16px 10px 12px;
                     border-radius: $br4;
-                    display: flex;
                     align-items: center;
-                    justify-content: center;
                     display: none;
                     &.active {
                         display: flex;
@@ -34,6 +32,39 @@
                     &.error {
                         background: #FDE9E9;
                         border: 1px solid #ED0A34;
+                    }
+                }
+                .notify__new {
+                    background: #FFFFFF;
+                    padding: 20px;
+                    border-top: 2px solid #DBAF3E;
+                    box-shadow: 0 6px 8px rgba(35, 37, 40, 0.08);
+                    border-radius: 4px;
+                    display: none;
+                    gap: 0 12px;
+                    &.active {
+                        display: flex;
+                    }
+                    .info {
+                        margin-right: 40px;
+                    }
+                    .title {
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 20px;
+                        margin-bottom: 2px;
+                        color: #19191A;
+                    }
+                    span {
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 150%;
+                        color: #797A80;
+                    }
+                    .btn {
+                        padding: 13px 20px;
+                        font-weight: 600;
+                        min-width: 70px;
                     }
                 }
             }
@@ -429,7 +460,7 @@
                 position: relative;
             }
             .dz__input {
-                bottom: -35px;
+                bottom: 0;
             }
             .main-form__line {
                 margin-top: 24px;

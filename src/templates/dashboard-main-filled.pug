@@ -74,81 +74,66 @@ block content
     .dashboard__orders 
         .dashboard__products-head
             h2.title18  Orders
-            .settingspage__tabs.tabs
-                button.__tab.item-tab(data-tab="order" data-target="order-1") Today
-                button.__tab.item-tab(data-tab="order" data-target="order-3") 3 days
-                button.__tab.item-tab(data-tab="order" data-target="order-7") 1 week
-                button.__tab.item-tab(data-tab="order" data-target="order-30").active 1 month
-                button.__tab.item-tab(data-tab="order" data-target="order-90") 3 months
-                button.__tab.item-tab(data-tab="order" data-target="order-365") 1 year
+            .settingspage__tabs
+                button.__tab.filter-chart-order(data-config="1") Today
+                button.__tab.filter-chart-order(data-config="3") 3 days
+                button.__tab.filter-chart-order(data-config="7") 1 week
+                button.__tab.filter-chart-order(data-config="30").active 1 month
+                button.__tab.filter-chart-order(data-config="90") 3 months
+                button.__tab.filter-chart-order(data-config="365") 1 year
                 button(type="button").btn.-lightblue.-medium.-wplus Download CSV
                     <svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.04688 7.73511L9 10.6875L11.9531 7.73511" stroke="#0E7DE2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M9 2.8125V10.6854" stroke="#0E7DE2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M15.1875 10.6875V14.625C15.1875 14.7742 15.1282 14.9173 15.0227 15.0227C14.9173 15.1282 14.7742 15.1875 14.625 15.1875H3.375C3.22582 15.1875 3.08274 15.1282 2.97725 15.0227C2.87176 14.9173 2.8125 14.7742 2.8125 14.625V10.6875" stroke="#0E7DE2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-    .graphwrapper.stblock.stm12.tab-order#order-1
-        p Today
-    .graphwrapper.stblock.stm12.tab-order#order-3
-        p 3 days
-    .graphwrapper.stblock.stm12.tab-order#order-7
-        p 1 week
-    .graphwrapper.stblock.stm12.tab-order.active#order-30
-        .graph 
-            canvas#myChart
+    .graphwrapper.stblock.stm12
+        .graph
+            canvas#orders-chart
         .graph__legend.flex-c-b
             .title.p13-400 References
             .legendpoints
                 .item
-                    .mark 
+                    .mark
                     p.p13-400 Created
                 .item
-                    .mark 
+                    .mark
                     p.p13-400 Pending
                 .item
-                    .mark 
+                    .mark
                     p.p13-400 Cancelled
                 .item
-                    .mark 
+                    .mark
                     p.p13-400 Refunded
                 .item
-                    .mark 
+                    .mark
                     p.p13-400 Paid
                 .item
-                    .mark 
+                    .mark
                     p.p13-400 Partial
                 .item
-                    .mark 
+                    .mark
                     p.p13-400 Shipped
-
-    .graphwrapper.stblock.stm12.tab-order#order-90
-        p 3 months
-    .graphwrapper.stblock.stm12.tab-order#order-365
-        p 1 year
     .dashboardstabs.stm
         .dashboards__revenue.stblock
             .dashboard__products-head
                 h2.title18  Revenue and Refunds
-                .settingspage__tabs.tabs
-                    button.__tab.item-tab(data-tab="refunds" data-target="refunds-7") Week
-                    button.__tab.active.item-tab(data-tab="refunds" data-target="refunds-30") Month
-                    button.__tab.item-tab(data-tab="refunds" data-target="refunds-365") Year
-            .graphwrapper.tab-refunds#refunds-7
-                p Week
-            .graphwrapper.active.tab-refunds#refunds-30
+                .settingspage__tabs
+                    button.__tab.filter-chart-refunds(data-config="7") Week
+                    button.__tab.filter-chart-refunds.active(data-config="30") Month
+                    button.__tab.filter-chart-refunds(data-config="365") Year
+            .graphwrapper
                 .graph
-                    canvas#myChart2
+                    canvas#refunds-chart
                 .graph__legend.flex-c-b
                     .title.p13-400 References
                     .legendpoints
                         .item
-                            .mark 
+                            .mark
                             p.p13-400 Revenue
                         .item
-                            .mark 
+                            .mark
                             p.p13-400 Refunds
-            .graphwrapper.tab-refunds#refunds-365
-                p Year
         .dashboards__group
             .dashboards__categories.stblock.pad24
                 .dashboard__products-head
@@ -162,13 +147,25 @@ block content
                         .name Product
                         .value Percentage
                     .items.tab-product#product-7
-                        p Week
-                        p Week
-                        p Week
+                        .item
+                            .name Product 1
+                            .value 43, 5%
+                        .item
+                            .name Product 2
+                            .value 43, 5%
+                        .item
+                            .name Product 3
+                            .value 43, 5%
+                        .item
+                            .name Product 4
+                            .value 43, 5%
+                        .item
+                            .name Product 5
+                            .value 43, 5%
                     .items.active.tab-product#product-30
                         .item 
                             .name Product 1
-                            .value 43, 5%
+                            .value 49, 5%
                         .item 
                             .name Product 2
                             .value 43, 5%
@@ -182,7 +179,21 @@ block content
                             .name Product 5
                             .value 43, 5%
                     .items.tab-product#product-365
-                        p Year
+                        .item
+                            .name Product 1
+                            .value 53, 5%
+                        .item
+                            .name Product 2
+                            .value 43, 5%
+                        .item
+                            .name Product 3
+                            .value 43, 5%
+                        .item
+                            .name Product 4
+                            .value 43, 5%
+                        .item
+                            .name Product 5
+                            .value 43, 5%
             .dashboards__topproducts.stblock.pad24
                 h2.title18  Top Products
                 .topproducts__table

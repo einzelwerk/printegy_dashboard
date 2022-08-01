@@ -15,15 +15,15 @@ block content
                         option(value='20')
                         option(value='50')
                         option(value='100')
-                    .__title.dr__el-btn Show
-                        span 20 orders p/p
+                    .__title.dr__el-btn(data-prefix="Show") Show
+                        span 20 orders
                     .__content.dr__el-block
                         div(data-value="20").cselect__label
-                            span 20 orders p/p
+                            span 20 orders
                         div(data-value="50").cselect__label
-                            span 50 orders p/p
+                            span 50 orders
                         div(data-value="100").cselect__label
-                            span 100 orders p/p
+                            span 100 orders
 
                 .cselect#filter-status.dr__el
                     select#filter-select-status(name="status" style="display:none")
@@ -53,26 +53,28 @@ block content
                     </defs>
                     </svg>
 
-    .ordespage__table 
-        .__head
-            .order__shop Shop
-            .order__order Order
-            .order__date Date
-            .order__customer Customer
-            .order__status Status
-            .order__profit Profit
-        +ordertable__item('9001', '05.02.2022', 'Andrei Bratuhin', 'Shipped', 'done', '€90.00')
-        +ordertable__item('9000', '05.02.2022', 'Piet Silberbauer', 'Shipped', 'done', '€24.75')
-        +ordertable__item('8999', '02.02.2022', 'Axel Steinhauer', 'Shipped', 'done', '€360.50')
-        +ordertable__item('8998', '01.02.2022', 'Yannik Steinberger', 'Cancelled', 'error', '€16.90')
-        +ordertable__item('8997', '31.01.2022', 'Katharina Kollmann', 'Paid', 'warning', '€21.25')
-        +ordertable__item('8996', '30.01.2022', 'Ellenor Porsche', 'Paid', 'warning', '€895.35')
-        +ordertable__item('8995', '26.01.2022', 'Simone Holz', 'Shipped', 'done', '€10.20')
-        +ordertable__item('8994', '25.01.2022', 'Simone Holz', 'Cancelled', 'error', '€39.50')
-        +ordertable__item('8993', '25.01.2022', 'Emmy Staebler', 'Cancelled', 'error', '€42.25')
-        +ordertable__item('8992', '25.01.2022', 'Simone Holz', 'Paid', 'warning', '€36.75')
-        +ordertable__item('8991', '22.01.2022', 'Ottilie Seidenstücker', 'Shipped', 'done', '€9.90')
-        +ordertable__item('693', '03.03.2022', 'Andrei Bratuhin', 'Confirmed', 'done', '€1990.00')
+    table.ordespage__table
+        thead
+            tr
+                th.order__shop Shop
+                th.order__order Order
+                th.order__date Date
+                th.order__customer Customer
+                th.order__status Status
+                th.order__profit Profit
+        tbody
+            +ordertable__item('9001', '05.02.2022', 'Andrei Bratuhin', 'Shipped', 'done', '€90.00')
+            +ordertable__item('9000', '05.02.2022', 'Piet Silberbauer', 'Shipped', 'done', '€24.75')
+            +ordertable__item('8999', '02.02.2022', 'Axel Steinhauer', 'Shipped', 'done', '€360.50')
+            +ordertable__item('8998', '01.02.2022', 'Yannik Steinberger', 'Cancelled', 'error', '€16.90')
+            +ordertable__item('8997', '31.01.2022', 'Katharina Kollmann', 'Paid', 'warning', '€21.25')
+            +ordertable__item('8996', '30.01.2022', 'Ellenor Porsche', 'Paid', 'warning', '€895.35')
+            +ordertable__item('8995', '26.01.2022', 'Simone Holz', 'Shipped', 'done', '€10.20')
+            +ordertable__item('8994', '25.01.2022', 'Simone Holz', 'Cancelled', 'error', '€39.50')
+            +ordertable__item('8993', '25.01.2022', 'Emmy Staebler', 'Cancelled', 'error', '€42.25')
+            +ordertable__item('8992', '25.01.2022', 'Simone Holz', 'Paid', 'warning', '€36.75')
+            +ordertable__item('8991', '22.01.2022', 'Ottilie Seidenstücker', 'Shipped', 'done', '€9.90')
+            +ordertable__item('693', '03.03.2022', 'Andrei Bratuhin', 'Confirmed', 'done', '€1990.00')
        
 block scripts
     script(src="js/dashboardproducts.js")

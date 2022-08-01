@@ -1,0 +1,19 @@
+extends core/_dashboard-template
+
+block title
+    title Messages
+
+block header
+    include core/_d-header
+
+block content
+    .dashboardproduct__status__wrapper
+        .dashboardproduct__status.published
+            img(src="./img/img-error.png" width="330" height="368" alt="")
+            h1.__title Oops, something went wrong!
+            p.__desc Please wait a few minutes or try again later
+            button(type="button").btn.-blue.-large Try to publish again
+
+
+block scripts
+    script(src="js/dashboardproducts.js")

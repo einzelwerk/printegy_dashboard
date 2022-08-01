@@ -1,8 +1,7 @@
 document.addEventListener('click', event => {
     let target = event.target;
-    console.log(event);
     let tab = target.getAttribute('data-tab');
-    if (target.localName == 'button' && tab !== '') {
+    if ([...event.target.classList].includes('item-tab')) {
         let activeContent = document.querySelector('.active.tab-' + tab);
         if (activeContent) activeContent.classList.remove('active');
 
