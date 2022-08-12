@@ -88,3 +88,17 @@
         width: 100%;
     }
 }
+.btn-cancel {
+    margin-left: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 17px 20px;
+    transition: .3s;
+    border-radius: $br4;
+    &:hover {
+        background: rgba(25, 25, 26, 0.06);
+    }
+}

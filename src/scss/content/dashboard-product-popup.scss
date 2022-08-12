@@ -722,8 +722,6 @@
             }
             .btn-cancel {
                 margin-left: 35px;
-                cursor: pointer;
-                font-weight: 600;
             }
             &.btop {
                 border-top: $borderinput;
@@ -1036,18 +1034,8 @@
                     .btns {
                         .btn-cancel {
                             margin-left: 8px;
-                            font-weight: 600;
-                            font-size: 14px;
                             color: $blacktext;
-                            background: transparent;
-                            transition: .3s;
                             padding: 12px 13px;
-                            border-radius: $br4;
-                            cursor: pointer;
-                            border: none;
-                            &:hover {
-                                background: rgba(25, 25, 26, 0.06);
-                            }
                         }
                     }
                 }

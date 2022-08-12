@@ -222,6 +222,93 @@
     }
 }
 
+hr {
+    height: 1px;
+    border: none;
+    border-top: 1px solid rgba(1, 24, 46, 0.12);
+    margin: 18px auto 24px;
+}
+
+// datepicker
+// https://github.com/qodesmith/datepicker
+.qs-datepicker-container {
+    font-family: Manrope-Regular,sans-serif;
+    border: none;
+    width: 274px;
+    transform: translateY(4px);
+    padding-bottom: 12px;
+    .qs-controls {
+        background: #F2F3F7;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        color: #19191A;
+        padding: 4.5px 6px;
+    }
+    .qs-squares {
+        background: #fff;
+        padding-bottom: 0;
+        border-radius: 4px;
+        gap: 4px 8px;
+        .qs-square {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            color: #606266;
+            border-radius: 2px;
+            margin-bottom: 0;
+            width: 30px;
+            text-decoration: none;
+        }
+        .qs-day {
+            line-height: 150%;
+            color: #AAADB3;
+        }
+        .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+            background: #0E7DE2;
+            color: #fff;
+        }
+        .qs-current {
+            font-weight: 600;
+            color: #19191A;
+        }
+        .qs-active {
+            background: #E0E1E6;
+            color: #19191A;
+        }
+    }
+    .qs-arrow {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-radius: 4px;
+        &:hover {
+            background: #E0E1E6;
+        }
+        &:hover:after {
+            background-image: url('/img/icon-arrow-small-black.svg');
+        }
+        &:after {
+            display: inline-block;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 12px;
+            height: 12px;
+            background: url('/img/icon-arrow-small.svg') no-repeat center/cover;
+            border-radius: 0;
+            transform: none;
+            border: none;
+        }
+        &.qs-left:after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
 // custom select
 .cselect {
     position: relative;
@@ -240,6 +327,10 @@
     font-family: $f-Manrope-Regular;
     line-height: 20px;
     color: #19191a;
+    &.full {
+        width: 100%;
+        margin: 0;
+    }
     .cselect__content {
         pointer-events: none;
         &.show {
@@ -1942,25 +2033,11 @@
         .btns {
             margin-top: 70px;
         }
-        .btn-cancel {
-            margin-left: 20px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            background: transparent;
-            border: none;
-        }
     }
     .editdesign__popup__form {
         width: 455px;
         .remove-desing {
             margin-top: 20px;
-        }
-        .btn-cancel {
-            margin-left: 20px;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
         }
     }
 }
@@ -2330,5 +2407,11 @@
         &:not(:first-child) {
             margin-top: 4px;
         }
+    }
+}
+.modal_export {
+    .main-form__line {
+        margin-bottom: 20px;
+        min-width: 196px;
     }
 }

@@ -135,6 +135,9 @@ $br4: 4px;
 .flex-co {
     @include flexaligncenter;
 }
+.gap-16 {
+    gap: 16px;
+}
 
 // titles
 @mixin title18 {

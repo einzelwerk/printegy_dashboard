@@ -70,6 +70,18 @@
 
 !(function () {
 
+    // datepicker
+    document.querySelectorAll('.datepicker').forEach(picker => {
+        datepicker(picker, {
+            formatter: (input, date, instance) => {
+                let [month, day] = [date.getMonth(), date.getDate()];
+                if (month < 10) month = `0${month}`;
+                if (day < 10) day = `0${day}`;
+                input.value = `${date.getFullYear()}-${month}-${day}`;
+            },
+        })
+    })
+
     // price radio
     const customPrice = document.getElementById('custom-price');
     if (customPrice) {
