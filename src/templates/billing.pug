@@ -1,5 +1,6 @@
 extends core/_dashboard-template
 include mixins/paymenttable-item
+include mixins/pagination
 
 block title
     title Billing
@@ -188,24 +189,27 @@ block content
                         span Cancelled
                     div(data-value="paid").cselect__label
                         span Paid
-    table.paymentspage__table
-        thead
-            tr
-                th.order__id ID
-                th.order__shop Shop
-                th.order__approved Approved
-                th.order__type Type
-                th.order__prodiver Provider
-                th.order__amount Amount
-                th.order__order Order
-                th.order__data Date
-                th.order__pdf PDF
-        tbody
-            +paymenttable__item('69358', 'Yes', 'done', 'Payment', 'Credit', '€2490.00', '9000', '05.02.2022')
-            +paymenttable__item('69358', 'Yes', 'done', 'Invoice', 'Refund', '€2490.00', '9000', '05.02.2022')
-            +paymenttable__item('69358', 'Yes', 'done', 'Invoice', 'PayPal', '€2490.00', '9000', '05.02.2022')
-            +paymenttable__item('69358', 'No', 'error', 'Payment', 'Stripe', '€2490.00', '9000', '05.02.2022')
-            +paymenttable__item('69358', 'Yes', 'done', 'Dropshipping', 'Stripe', '€2490.00', '9000', '05.02.2022')
+    .paymentspage__table
+        table
+            thead
+                tr
+                    th.order__id ID
+                    th.order__shop Shop
+                    th.order__approved Approved
+                    th.order__type Type
+                    th.order__prodiver Provider
+                    th.order__amount Amount
+                    th.order__order Order
+                    th.order__data Date
+                    th.order__pdf PDF
+            tbody
+                +paymenttable__item('69358', 'Yes', 'done', 'Payment', 'Credit', '€2490.00', '9000', '05.02.2022')
+                +paymenttable__item('69358', 'Yes', 'done', 'Invoice', 'Refund', '€2490.00', '9000', '05.02.2022')
+                +paymenttable__item('69358', 'Yes', 'done', 'Invoice', 'PayPal', '€2490.00', '9000', '05.02.2022')
+                +paymenttable__item('69358', 'No', 'error', 'Payment', 'Stripe', '€2490.00', '9000', '05.02.2022')
+                +paymenttable__item('69358', 'Yes', 'done', 'Dropshipping', 'Stripe', '€2490.00', '9000', '05.02.2022')
+
+        +pagination
 
 block scripts
     script(src="js/dashboardproducts.js")

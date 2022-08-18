@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  margin-top: 24px;
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 36px;
+    border: 1px solid #E0E3E6;
+    border-left: none;
+    &.active {
+      background: #0E86F4;
+      a {
+        color: #fff;
+      }
+    }
+    &:hover:not(.active) {
+      background: #F8F7F7;
+    }
+    &:nth-of-type(1) {
+      border-left: 1px solid #E0E3E6;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: #797A80;
+    }
+  }
+}

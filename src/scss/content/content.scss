@@ -1127,8 +1127,12 @@ hr {
     background: #fff;
     position: relative;
     z-index: 2;
-    width: 100%;
-    border-collapse: collapse;
+    display: block;
+    padding: 0 24px 32px;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
     tr + tr {
         border-top: 1px solid rgba(1, 24, 46, 0.12);
         border-collapse: collapse;
