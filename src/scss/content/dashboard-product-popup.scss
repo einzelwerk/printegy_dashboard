@@ -143,6 +143,12 @@
             &.review {
                 align-items: start;
             }
+            .content {
+                flex: 1 0 auto;
+                width: auto;
+                margin-top: 20px;
+                gap: 20px;
+            }
         }
         
         // __caregories__filter
@@ -281,12 +287,16 @@
         }
         
         // __products__grid 
-        .dashboard__product__popup-content__products__grid {
+        .dashboard__product__popup-content__products__grid,
+        .dashboard__products__grid {
             width: 76%;
             margin-top: 20px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
+        }
+        .dashboard__products__grid {
+            width: 100%;
         }
         
         // popupitem
@@ -779,34 +789,18 @@
                 line-height: 154%;
             }
         }
-        
+
         .image-options__settingitems {
             display: flex;
             align-items: center;
             gap: 12px;
             flex-wrap: wrap;
             .image-options__item {
-                padding: 8px 12px;
-                border-radius: $br;
-                border: $borderinput;
                 cursor: pointer;
-                .value {
-                    display: flex;
-                    align-items: center;
-                    .color {
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 2px;
-                        background: #2F2F2F
-                    }
-                }
-                &:hover {
-                    border: $borderinputhover;
-                    color: #606266;
-                }
-                &.active {
-                    border: $borderinputhover;
-                    .value {
+                input {
+                    display: none;
+                    &:checked ~ .value {
+                        border: $borderinputhover;
                         color: $blacktext;
                         &::after {
                             content: url('./img/check-blue.svg');
@@ -815,6 +809,23 @@
                             width: 10px;
                             height: 6px;
                         }
+                    }
+                }
+                .value {
+                    display: flex;
+                    align-items: center;
+                    padding: 8px 12px;
+                    border-radius: $br;
+                    border: $borderinput;
+                    &:hover {
+                        border: $borderinputhover;
+                        color: #606266;
+                    }
+                    .color {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 2px;
+                        background: #2F2F2F
                     }
                 }
             }

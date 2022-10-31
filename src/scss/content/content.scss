@@ -1,4 +1,129 @@
 // dashboard
+.dashboard {
+    &-title {
+        margin-bottom: 12px;
+    }
+    .dashboard__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        &__content {
+            flex: 1 0 0%;
+        }
+        &__content.center {
+            text-align: center;
+            justify-content: center;
+        }
+        &__sidebar {
+            flex: 0 0 auto;
+            width: 480px;
+            min-width: 420px;
+            .dashboard__product__popup-content__review__sideblock {
+                position: relative;
+                width: auto;
+                margin-top: 0;
+                margin-left: 24px;
+                .tabs {
+                    justify-content: start;
+                    gap: 24px;
+                }
+                h3.title {
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 36px;
+                    color: #19191A;
+                    margin-bottom: 8px;
+                }
+                .price {
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 28px;
+                    color: #313133;
+                }
+
+            }
+            .dashboard__product__popup-content__save-btns {
+                padding: 20px 24px;
+                gap: 12px;
+                .btn {
+                    width: auto;
+                }
+                .btn--full {
+                    flex: 1 0 auto;
+                }
+            }
+        }
+    }
+}
+
+.main-form__input-number {
+    width: 80px;
+}
+
+.sidebar-product-block {
+    margin-bottom: 24px;
+    h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #19191A;
+        margin-bottom: 16px;
+    }
+    p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #797A80;
+    }
+    .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        .item-title {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+            color: #797A80;
+        }
+        .item-price {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 22px;
+            color: #19191A;
+        }
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        .item-title {
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 20px;
+            color: #797A80;
+            svg {
+                margin-right: 8px;
+            }
+        }
+        .item-price {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 20px;
+            color: #606266;
+            text-align: right;
+            strong {
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 28px;
+                color: #19191A;
+            }
+        }
+    }
+}
+
 // header styles
 .dashboard__products {
     &-head {
@@ -27,6 +152,13 @@
     margin-top: 30px;
     margin-left: 25px;
     width: 23%;
+}
+.dashboard__products__sidebar {
+    margin-left: 25px;
+    width: 23%;
+}
+.mt-0 {
+    margin-top: 0 !important;
 }
 
 .dashboard__products__categories {
@@ -575,7 +707,7 @@ hr {
     z-index: 5;
     margin-top: 22px;
     width: 100%;
-    height: 240px;
+    height: 200px;
     border: $borderinput;
     border-radius: $br4;
     display: flex;
@@ -587,11 +719,14 @@ hr {
         align-items: center;
         flex-direction: column;
         .info__text {
-            margin-top: 20px;
+            margin-top: 15px;
             font-weight: 600;
             font-size: 16px;
             color: $gray200;
         }
+    }
+    .btn {
+        margin-top: 24px;
     }
 }
 
@@ -757,6 +892,74 @@ hr {
             }
         }
     }
+}
+
+// DESC ICON
+.desc-icon {
+    position: relative;
+    display: inline-block;
+}
+.desc-icon:after {
+    content:'';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(./img/icon-info.svg) no-repeat center;
+    margin-left: 8px;
+    transform: translateY(1px);
+    cursor: pointer;
+}
+.desc-icon:hover:after {
+    opacity: .6;
+}
+.desc-icon:hover .desc-info {
+    display: block;
+}
+.desc-info {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    bottom: 145%;
+    right: -28px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid rgba(1, 24, 46, 0.12);
+    padding: 20px;
+    width: 90vw;
+    max-width: 540px;
+    h3 {
+        font-weight: 600;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 20px;
+        color: #19191A;
+        margin-bottom: 10px;
+    }
+    p {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 15px;
+        line-height: 22px;
+        color: #606266;
+    }
+}
+.desc-info:before,
+.desc-info:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    right: 28px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+    z-index: 9;
+}
+.desc-info:after {
+    bottom: -9px;
+    border-top: 8px solid rgba(1,24,46,.12);
+    z-index: 8;
 }
 
 // BILLING
@@ -989,72 +1192,7 @@ hr {
         p {
             margin-bottom: 4px;
         }
-        .desc-icon {
-            position: relative;
-            display: inline-block;
-        }
-        .desc-icon:after {
-            content:'';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background: url(./img/icon-info.svg) no-repeat center;
-            margin-left: 8px;
-            transform: translateY(1px);
-            cursor: pointer;
-        }
-        .desc-icon:hover:after {
-            opacity: .6;
-        }
-        .desc-icon:hover .desc-info {
-            display: block;
-        }
-        .desc-info {
-            display: none;
-            position: absolute;
-            z-index: 99999;
-            bottom: 145%;
-            right: -28px;
-            background: #FFFFFF;
-            border-radius: 4px;
-            border: 1px solid rgba(1, 24, 46, 0.12);
-            padding: 20px;
-            width: 90vw;
-            max-width: 540px;
-            h3 {
-                font-weight: 600;
-                font-style: normal;
-                font-size: 14px;
-                line-height: 20px;
-                color: #19191A;
-                margin-bottom: 10px;
-            }
-            p {
-                font-weight: 400;
-                font-style: normal;
-                font-size: 15px;
-                line-height: 22px;
-                color: #606266;
-            }
-        }
-        .desc-info:before,
-        .desc-info:after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            right: 28px;
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid #fff;
-            z-index: 9;
-        }
-        .desc-info:after {
-            bottom: -9px;
-            border-top: 8px solid rgba(1,24,46,.12);
-            z-index: 8;
-        }
+
         p strong {
             color: #19191A
         }
@@ -2073,9 +2211,66 @@ hr {
     margin-top: 32px;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-left: 400px;
+    padding: 0;
+    //align-items: center;
+    //justify-content: flex-end;
+    //padding-left: 400px;
+    .image {
+        position: relative;
+        display: flex;
+        width: 410px;
+        margin-right: 15px;
+        justify-content: center;
+        img.bg {
+            align-self: end;
+            height: auto;
+        }
+        img.logo,
+        .size {
+            position: absolute;
+            inset:0;
+            top: auto;
+            margin: auto;
+            transform: translate3d(-10px,-74px,0);
+        }
+        .size {
+            display: block;
+            width: 89px;
+            height: 89px;
+            transform: translate3d(-10px,-55px,0);
+            border: 1px solid #0E86F4;
+            &:before,
+            &:after {
+                content:'';
+                position: absolute;
+                top: -3px;
+                left: -3px;
+                width: 4px;
+                height: 5px;
+                background: #fff;
+                border: 1px solid #0E86F4;
+            }
+            &:after {
+                left: auto;
+                right: -3px;
+            }
+            span:before,
+            span:after {
+                content:'';
+                position: absolute;
+                bottom: -3px;
+                left: -3px;
+                width: 4px;
+                height: 5px;
+                background: #fff;
+                border: 1px solid #0E86F4;
+            }
+            span:after  {
+                left: auto;
+                right: -3px;
+            }
+        }
+    }
     .popupclose {
         position: absolute;
         top: 4px;
@@ -2093,26 +2288,26 @@ hr {
             background: #EEEFF4;
         }
     }
-    &::after {
-        content: "";
-        position: absolute;
-        left: 14px;
-        bottom: 0;
-        width: 360px;
-        height: 196px;
-        background-repeat: no-repeat;
-        background-image: url(./img/dashboardemty_img.png);
-        pointer-events: none;
-    }
+    //&::after {
+    //    content: "";
+    //    position: absolute;
+    //    left: 14px;
+    //    bottom: 0;
+    //    width: 360px;
+    //    height: 196px;
+    //    background-repeat: no-repeat;
+    //    background-image: url(./img/dashboardemty_img.png);
+    //    pointer-events: none;
+    //}
 }
 
 .dashboardemty__start__desc {
-    padding: 38px 0;
-    width: 560px;
-    margin-right: 160px;
-    @media (max-width: 1300px) {
-        margin-right: 16px;
-    }
+    padding: 32px 0;
+    width: 540px;
+    //margin-right: 160px;
+    //@media (max-width: 1300px) {
+    //    margin-right: 16px;
+    //}
     .text {
         font-weight: 400;
         font-size: 15px;
@@ -2120,7 +2315,9 @@ hr {
         color: #606266;
     }
     .btn {
-        margin-top: 20px;
+        margin-top: 16px;
+        padding: 12px 29px;
+        margin-right: 8px;
     }
 }
 

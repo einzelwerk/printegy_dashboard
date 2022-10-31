@@ -1,38 +1,12 @@
 .dashboard__product__popup-content__review__sideblock
     .tabs
-        a(href="").tab Product Design
-        a(href="").tab.active Settings & Variants
-        a(href="").tab Shipping & Pricing
+        a(href="").tab.active Specify the details
+        a(href="").tab Place order
     .dashboard__product__popup-content__content
         .image-options
-            p.desc.p13-400 Available models
-            .__availablemodels__wrapper.stm16
-                .__aviablemodel
-                    input(type="checkbox" checked).toggler
-                    p.text.p14-600.active All Models Enabled
-                .__aviablemodel
-                    input(type="checkbox").toggler
-                    p.text.p14-600 Galaxy S7 Edge
-            .__titledescription__wrapper.stm
-                p.desc.p13-400 Title & Description
-                button.__editbtn.open-modal(type="button" data-modal="edit-modal")
-                    <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.47816 14.2856H2.2853C2.13375 14.2856 1.9884 14.2254 1.88124 14.1182C1.77407 14.011 1.71387 13.8657 1.71387 13.7142V10.5213C1.71361 10.4471 1.72799 10.3736 1.75618 10.3049C1.78437 10.2363 1.82582 10.1739 1.87816 10.1213L10.4496 1.54987C10.5028 1.49588 10.5661 1.453 10.636 1.42373C10.7059 1.39447 10.7809 1.37939 10.8567 1.37939C10.9325 1.37939 11.0075 1.39447 11.0774 1.42373C11.1473 1.453 11.2107 1.49588 11.2639 1.54987L14.4496 4.73558C14.5036 4.78875 14.5465 4.85213 14.5757 4.92203C14.605 4.99193 14.6201 5.06695 14.6201 5.14272C14.6201 5.2185 14.605 5.29352 14.5757 5.36342C14.5465 5.43332 14.5036 5.4967 14.4496 5.54987L5.87816 14.1213C5.82556 14.1736 5.76315 14.2151 5.69452 14.2433C5.62588 14.2715 5.55236 14.2858 5.47816 14.2856V14.2856Z" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M8.57129 3.42847L12.5713 7.42847" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    p.desc.p13-600 Edit
-            .__cushion__wrapper.stm16
-                h3.title Cushion
-                p.stm12.p13-400 Add a touch of comfort and sophistication to any room. Cushions are a great way to update your home and add a splash of colour. This cushion is only the cover and does not include the insert.
-            .__settingblock.stm
-                .title.p13-400 Material
-                .__settingitems.stm16
-                    .__item.active
-                        .value.p14-600 Matte
-                    .__item
-                        .value.p14-600 White & Black
-                    .__item
-                        .value.p14-600 Gloss
+            .__cushion__wrapper
+                h3.title Test Print for Review
+                span.price 37,34 €
             .__settingblock.stm
                 .title.p13-400 Color
                 .__settingitems.stm16
@@ -107,18 +81,11 @@
                         input(name="size" type="radio" value="L")
                         .value.p14-600 L
             .__settingblock.stm
-                .title.p13-400 Tags
+                .title.p13-400 Amount
                     .tag__add-wrapper.stm16
-                        input(type="text" placeholder="Add a new tag").tag__value
-                        button(type="button" placeholder="Add").tag__add
-                            <svg class="icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.38477 7H12.6139" stroke="#0E86F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M7 1.38525V12.6144" stroke="#0E86F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-
-                .settingblock__tags.stm12
+                        input(type="number").main-form__input.main-form__input-number
 
 
     .dashboard__product__popup-content__save-btns.btop
-        button(type="submit" ).btn.-blue.-medium Save Product
-        .btn-cancel Cancel
+        button(type="submit").btn.-blue.-medium.btn--full Continue to place order
+        button(type="button").btn.btn--white.btn--compact Back to products

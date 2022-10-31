@@ -1,0 +1,127 @@
+extends _dashboard-template
+include ../mixins/smallbtn
+
+block title
+    title Place order
+
+block body
+    body.place-order
+block content
+    .dashboard__wrapper
+        .__content
+            block products
+                .place-order-products
+                    table
+                        thead
+                            tr
+                                th Product
+                                th Amount
+                                th Unit Price
+                                th Total Price
+                        tbody
+                            tr
+                                td
+                                    .product-card
+                                        img(src="./img/po-product-1.png" width="90" height="90" alt="")
+                                        .product-card-desc
+                                            h3 Test Print for Review
+                                            p Organic Hoodie (Short)
+                                            .product-card-desc-footer
+                                                span Color: black
+                                                span Size: S
+                                            button(type="button").btn-edit
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.47816 14.2856H2.2853C2.13375 14.2856 1.9884 14.2254 1.88124 14.1182C1.77407 14.011 1.71387 13.8657 1.71387 13.7142V10.5213C1.71361 10.4471 1.72799 10.3736 1.75618 10.3049C1.78437 10.2363 1.82582 10.1739 1.87816 10.1213L10.4496 1.54987C10.5028 1.49588 10.5661 1.453 10.636 1.42373C10.7059 1.39447 10.7809 1.37939 10.8567 1.37939C10.9325 1.37939 11.0075 1.39447 11.0774 1.42373C11.1473 1.453 11.2107 1.49588 11.2639 1.54987L14.4496 4.73558C14.5036 4.78875 14.5465 4.85213 14.5757 4.92203C14.605 4.99193 14.6201 5.06695 14.6201 5.14272C14.6201 5.2185 14.605 5.29352 14.5757 5.36342C14.5465 5.43332 14.5036 5.4967 14.4496 5.54987L5.87816 14.1213C5.82556 14.1736 5.76315 14.2151 5.69452 14.2433C5.62588 14.2715 5.55236 14.2858 5.47816 14.2856V14.2856Z" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.57129 3.42871L12.5713 7.42871" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                span Edit
+                                td
+                                    input(type="number" value="2").main-form__input.main-form__input-number
+                                td
+                                    span.price 37,34 €
+                                td
+                                    span.price 75.48 €
+                            tr
+                                td
+                                    .product-card
+                                        img(src="./img/po-product-2.png" width="90" height="90" alt="")
+                                        .product-card-desc
+                                            h3 Test Print for Review
+                                            p Organic Hoodie (Short)
+                                            .product-card-desc-footer
+                                                span Color: white
+                                                span Size: M
+                                            button(type="button").btn-edit
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.47816 14.2856H2.2853C2.13375 14.2856 1.9884 14.2254 1.88124 14.1182C1.77407 14.011 1.71387 13.8657 1.71387 13.7142V10.5213C1.71361 10.4471 1.72799 10.3736 1.75618 10.3049C1.78437 10.2363 1.82582 10.1739 1.87816 10.1213L10.4496 1.54987C10.5028 1.49588 10.5661 1.453 10.636 1.42373C10.7059 1.39447 10.7809 1.37939 10.8567 1.37939C10.9325 1.37939 11.0075 1.39447 11.0774 1.42373C11.1473 1.453 11.2107 1.49588 11.2639 1.54987L14.4496 4.73558C14.5036 4.78875 14.5465 4.85213 14.5757 4.92203C14.605 4.99193 14.6201 5.06695 14.6201 5.14272C14.6201 5.2185 14.605 5.29352 14.5757 5.36342C14.5465 5.43332 14.5036 5.4967 14.4496 5.54987L5.87816 14.1213C5.82556 14.1736 5.76315 14.2151 5.69452 14.2433C5.62588 14.2715 5.55236 14.2858 5.47816 14.2856V14.2856Z" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.57129 3.42871L12.5713 7.42871" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                span Edit
+                                td
+                                    input(type="number" value="1").main-form__input.main-form__input-number
+                                td
+                                    span.price 12.99 €
+                                td
+                                    span.price 12.99 €
+                    .__footer
+                        a(href="#").btn.btn--lightblue.btn--compact Add product
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8H13" stroke="#0E86F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 3V13" stroke="#0E86F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+
+        .__sidebar
+            block sidebar
+                block modal
+                .dashboard__product__popup-content__review__sideblock
+                    .tabs
+                        a(href="").tab Specify the details
+                        a(href="").tab.active Place order
+                    .dashboard__product__popup-content__content
+                        .sidebar-product-block
+                            h3 Delivery Address
+                            p Saved Address
+                            p Kristina Chura
+                            p Bahrenfelder Chaussee 105
+                            p 22761 Hamburg
+                            p Deutschland
+                        .sidebar-product-block
+                            h3 Summary
+                            .item
+                                span.item-title Payment method
+                                span.item-price Wallet
+                            .item
+                                span.item-title Products & Print
+                                span.item-price 37,34 €
+                            .item
+                                span.item-title Warehousing Fee
+                                    i.desc-icon
+                                        .desc-info
+                                            h3 Deposit
+                                            span Please note that only transfers with the subject line below this disclaimer allow an automated matching.
+                                span.item-price 8,92 €
+                            .item
+                                span.item-title Shipping & Handling
+                                span.item-price 5,36 €
+                            .footer
+                                span.item-title
+                                    <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 10.8182H2.66667C1.95942 10.8182 1.28115 10.55 0.781049 10.0726C0.280952 9.59527 0 8.94782 0 8.27273V3.18182C0 2.33795 0.351189 1.52864 0.976311 0.931933C1.60143 0.335226 2.44928 0 3.33333 0H6.66667C7.10441 0 7.53786 0.0823002 7.94228 0.242201C8.3467 0.402103 8.71416 0.636474 9.02369 0.931933C9.33322 1.22739 9.57875 1.57815 9.74627 1.96419C9.91378 2.35022 10 2.76398 10 3.18182V10.8182ZM16 6.36364V5.72727C16 5.30943 15.9138 4.89568 15.7463 4.50964C15.5788 4.12361 15.3332 3.77285 15.0237 3.47739C14.7142 3.18193 14.3467 2.94756 13.9423 2.78766C13.5379 2.62775 13.1044 2.54545 12.6667 2.54545H11.3333V6.36364H16ZM11.3333 7.63636V10.8182H13.3333C14.0406 10.8182 14.7189 10.55 15.219 10.0726C15.719 9.59527 16 8.94782 16 8.27273V7.63636H11.3333ZM2.70533 12.0909C2.68091 12.1954 2.66795 12.302 2.66667 12.4091C2.66667 12.831 2.84226 13.2357 3.15482 13.534C3.46738 13.8324 3.89131 14 4.33333 14C4.77536 14 5.19928 13.8324 5.51184 13.534C5.82441 13.2357 6 12.831 6 12.4091C5.99871 12.302 5.98576 12.1954 5.96133 12.0909H2.70533ZM10.0387 12.0909C10.0142 12.1954 10.0013 12.302 10 12.4091C10 12.831 10.1756 13.2357 10.4882 13.534C10.8007 13.8324 11.2246 14 11.6667 14C12.1087 14 12.5326 13.8324 12.8452 13.534C13.1577 13.2357 13.3333 12.831 13.3333 12.4091C13.332 12.302 13.3191 12.1954 13.2947 12.0909H10.0387Z" fill="#797A80"/>
+                                    </svg>
+                                    Delivery time is about 1-3 working days
+                                span.item-price
+                                    strong 51.62 €
+                                    br
+                                    span incl. VAT
+                    .dashboard__product__popup-content__save-btns.btop
+                        button(type="submit").btn.-blue.-medium.btn--full Place order
+                        button(type="button").btn.btn--white.btn--compact Back to products
+                    block sidebar-overlay
+
+
+block scripts
+    script(src="js/loader.js")
+    script(src="js/just-validate.production.min.js")
+    script(src="js/dashboardproducts.js")
+    script(src="js/popupsetting.js")
+    script(src="js/popuptable.js")

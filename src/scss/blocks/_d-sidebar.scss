@@ -94,9 +94,14 @@
   &__bottom {
     margin-top: auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 28px 24px;
+    .btn {
+      width: 100%;
+      margin-bottom: 24px;
+    }
   }
   &__help {
     font-family: $f-Manrope-SemiBold;

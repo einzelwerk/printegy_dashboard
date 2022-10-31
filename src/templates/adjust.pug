@@ -1,0 +1,24 @@
+extends core/_dashboard-template
+include mixins/smallbtn
+
+block title
+    title Adjust
+
+
+block content
+    .dashboard__wrapper
+        .__content.center
+            picture
+                source(srcset="./img/design-adjust.png" type="image/png" media="(max-width:1110px)" width="220" height="220")
+                source(srcset="./img/design-adjust.png" type="image/png" media="(max-width:1290px)" width="300" height="300")
+                img(src="./img/design-adjust.png" width="490" height="490" alt="")
+        .__sidebar
+            include content/sidebar-adjust
+
+
+block scripts
+    script(src="js/loader.js")
+    script(src="js/just-validate.production.min.js")
+    script(src="js/dashboardproducts.js")
+    script(src="js/popupsetting.js")
+    script(src="js/popuptable.js")

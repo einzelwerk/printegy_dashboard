@@ -1,0 +1,94 @@
+extends core/_dashboard-template
+include mixins/choose-product
+
+block content
+        .main
+                .popupmain
+                        h1.dashboard-title Choose your product
+                        .dashboard__product__popup-contentwrapper
+                                .dashboard__product__popup-content
+                                        .__products__grid
+                                                +chooseprodut
+                                                +chooseprodut
+                                                +chooseprodut
+                                        .__caregories__filter
+                                                .__caregory__filter.toggle__elem
+                                                        .__head.toggle__elem__btn.toggle__arrow
+                                                                .title All
+                                                        .__content.toggle__elem__content
+                                                                ul.category__list
+                                                                        li.category__list-item.active
+                                                                                a(href="") All
+                                                                                        span.count (7)
+                                                .__caregory__filter.toggle__elem
+                                                        .__head.toggle__elem__btn.toggle__arrow
+                                                                .title Unisex Shirts
+                                                                .count 1
+                                                        .__content.toggle__elem__content
+                                                                ul.category__list
+                                                                        li.category__list-item.active
+                                                                                a(href="") All
+                                                                                        span.count (7)
+                                                                        li.category__list-item
+                                                                                a(href="") Apparel
+                                                                                        span.count (4)
+                                                                        li.category__list-item
+                                                                                a(href="") Homeware
+                                                                                        span.count (1)
+                                                                        li.category__list-item
+                                                                                a(href="") Phone & Tablet Cases
+                                                                                        span.count (2)
+                                                .__caregory__filter.active.toggle__elem
+                                                        .__head.toggle__elem__btn.toggle__arrow
+                                                                .title V-Neck Shirts
+                                                                .count 3
+                                                        .__content.toggle__elem__content--active
+                                                                ul.category__list
+                                                                        li.category__list-item.active
+                                                                                a(href="") All
+                                                                                        span.count (7)
+                                                                        li.category__list-item
+                                                                                a(href="") Apparel
+                                                                                        span.count (4)
+                                                                        li.category__list-item
+                                                                                a(href="") Homeware
+                                                                                        span.count (1)
+                                                                        li.category__list-item
+                                                                                a(href="") Phone & Tablet Cases
+                                                                                        span.count (2)
+                                                .__caregory__filter.toggle__elem
+                                                        .__head.toggle__elem__btn.toggle__arrow
+                                                                .title Tank-Tops
+                                                        .__content.toggle__elem__content
+                                                                ul.category__list
+                                                                        li.category__list-item.active
+                                                                                a(href="") All
+                                                                                        span.count (7)
+                                                .__caregory__filter.toggle__elem
+                                                        .__head.toggle__elem__btn.toggle__arrow
+                                                                .title Hoodies
+                                                        .__content.toggle__elem__content
+                                                                ul.category__list
+                                                                        li.category__list-item.active
+                                                                                a(href="") All
+                                                                                        span.count (7)
+                                                .__caregory__filter.toggle__elem
+                                                        .__head.toggle__elem__btn.toggle__arrow
+                                                                .title Sweatshirts
+                                                                .count 5
+                                                        .__content.toggle__elem__content
+                                                                ul.category__list
+                                                                        li.category__list-item.active
+                                                                                a(href="") All
+                                                                                        span.count (7)
+                                                .__caregory__filter.toggle__elem
+                                                        .__head.toggle__elem__btn.toggle__arrow
+                                                                .title Jacket / Zip-Hoodies
+                                                        .__content.toggle__elem__content
+                                                                ul.category__list
+                                                                        li.category__list-item.active
+                                                                                a(href="") All
+                                                                                        span.count (7)
+
+block scripts
+        script(src="js/dashboardproducts.js")

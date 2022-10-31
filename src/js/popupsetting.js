@@ -1,15 +1,16 @@
-let charchoiceBtns = document.querySelectorAll('.image-options__item');
-if (charchoiceBtns.length > 0) {
-    charchoiceBtns.forEach((item) => {
-        item.addEventListener('click', () => {
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-            } else {
-                item.classList.add('active');
-            }
-        })
-    });
-}
+// let charchoiceBtns = document.querySelectorAll('.image-options__item');
+// if (charchoiceBtns.length > 0) {
+//     charchoiceBtns.forEach((item) => {
+//         item.addEventListener('click', () => {
+//             let activeOption = document.querySelector('.image-options__item.active').classList.remove('active');
+//             if (item.classList.contains('active')) {
+//                 item.classList.remove('active');
+//             } else {
+//                 item.classList.add('active');
+//             }
+//         })
+//     });
+// }
 
 let tagValue = document.querySelector('.tag__value'),
     tagsDiv = document.querySelector('.settingblock__tags'),
