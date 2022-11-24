@@ -1,0 +1,26 @@
+extends core/_dashboard-products
+
+block title
+    title dashboard-products-main-grid
+
+block sidebar_btn_bottom
+
+block productshead
+    h1.dashboard__title Products
+    button(type="button").btn.-lightblue.-medium Connect shopify
+
+block sidebar_btn
+    button(type="button").btn.-blue.-medium.-wplus.-full New Product
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 8H13" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 3V13" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+block products
+    .no__product
+        .__info
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26 21.3333C26 22.0707 25.404 22.6667 24.6667 22.6667H22C21.2627 22.6667 20.6667 22.0707 20.6667 21.3333C20.6667 20.596 21.2627 20 22 20H24.6667C25.404 20 26 20.596 26 21.3333ZM32 20V26.6667C32 29.608 29.608 32 26.6667 32H5.33333C2.392 32 0 29.608 0 26.6667V20C0 17.0587 2.392 14.6667 5.33333 14.6667H6.66667V5.33333C6.66667 2.392 9.05867 0 12 0H20C22.9413 0 25.3333 2.392 25.3333 5.33333V14.6667H26.6667C29.608 14.6667 32 17.0587 32 20ZM9.33333 14.6667H22.6667V5.33333C22.6667 3.86267 21.4707 2.66667 20 2.66667H12C10.5293 2.66667 9.33333 3.86267 9.33333 5.33333V14.6667ZM5.33333 29.3333H14.6667V17.3333H5.33333C3.86267 17.3333 2.66667 18.5293 2.66667 20V26.6667C2.66667 28.1373 3.86267 29.3333 5.33333 29.3333ZM29.3333 20C29.3333 18.5293 28.1373 17.3333 26.6667 17.3333H17.3333V29.3333H26.6667C28.1373 29.3333 29.3333 28.1373 29.3333 26.6667V20ZM10 20H7.33333C6.596 20 6 20.596 6 21.3333C6 22.0707 6.596 22.6667 7.33333 22.6667H10C10.7373 22.6667 11.3333 22.0707 11.3333 21.3333C11.3333 20.596 10.7373 20 10 20ZM18.6667 6.66667C18.6667 5.92933 18.0707 5.33333 17.3333 5.33333H14.6667C13.9293 5.33333 13.3333 5.92933 13.3333 6.66667C13.3333 7.404 13.9293 8 14.6667 8H17.3333C18.0707 8 18.6667 7.404 18.6667 6.66667Z" fill="#AAADB3"/>
+            </svg>
+            .info__text You don’t have any products yet.
+            .info__content Create your first product to publish on your store or order a sample.

@@ -1,0 +1,31 @@
+extends core/_dashboard-products
+include mixins/item
+
+block title
+	title dashboard-products-main-filled
+
+block sidebar_btn_bottom
+	a(href="#").btn.btn--blue Order Samples
+		<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M3 8H13" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M8 3V13" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+
+block productshead
+	h1.dashboard__title Products
+	button(type="button").btn.-lightblue.-medium Connect shopify
+
+block products
+	.items__block.items__block-tile
+		+item__block-ph
+		+item__block-ph
+		+item__block-ph
+		+item__block-ph
+		+item__block-ph
+		+item__block-ph
+		+item__block
+		+item__block
+		+item__block
+		+item__block
+		+item__block
+		+item__block

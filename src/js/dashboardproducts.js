@@ -73,3 +73,40 @@ if (billing_form && sender_form) {
         }
     });
 }
+
+let checkAddress = document.querySelector('#form_sample_address .toggler[name="address"]');
+let deliveryForm = document.getElementById('delivery_form');
+if (checkAddress && deliveryForm) {
+    checkAddress.addEventListener('change', event => {
+        deliveryForm.style.display = (event.target.checked ? 'none' : 'block');
+
+        if (!event.target.checked) {
+            deliveryForm.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+        }
+    });
+}
+
+let formSampleAddress = document.getElementById('form_sample_address');
+if (formSampleAddress) {
+    formSampleAddress.addEventListener('change', () => {
+        console.log('changeFormSampleAddress');
+        let form = document.getElementById('billing_form');
+        if (!checkAddress.checked) {
+            form = document.getElementById('form_sample_address');
+        }
+        var check = true;
+        let fields = form.querySelectorAll('input[required]');
+        fields.forEach((field, index) => {
+            if (field.value == '') {
+                check = false;
+            }
+        });
+
+        let submit = formSampleAddress.querySelector('button[type="submit"]');
+        if (check) {
+            submit.removeAttribute('disabled');
+        } else {
+            submit.setAttribute('disabled', true);
+        }
+    });
+}

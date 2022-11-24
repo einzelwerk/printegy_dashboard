@@ -15,6 +15,10 @@
     svg {
         margin-left: 8px;
     }
+    &[disabled] {
+        opacity: 0.2;
+        cursor: not-allowed;
+    }
     &--lightblue {
         background: rgba(14, 134, 244, 0.12);
         border-radius: 4px;
@@ -80,6 +84,9 @@
     }
     &--medium {
         padding: 13px 20px;
+    }
+    &--big {
+        padding: 13px 32px;
     }
     &--wide {
         padding: 13px 40px;

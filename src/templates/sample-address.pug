@@ -1,0 +1,134 @@
+extends core/_dashboard-template
+include mixins/smallbtn
+
+block title
+    title Sample address
+
+block body
+    body.sample-address
+block content
+    .dashboard__wrapper
+        .__content
+            block products
+                .place-order-products
+                    table
+                        thead
+                            tr
+                                th Product
+                                th Amount
+                                th Unit Price
+                                th Total Price
+                        tbody
+                            tr
+                                td
+                                    .product-card
+                                        img(src="./img/po-product-1.png" width="90" height="90" alt="")
+                                        .product-card-desc
+                                            h3 Test Print for Review
+                                            p Organic Hoodie (Short)
+                                            .product-card-desc-footer
+                                                span Color: black
+                                                span Size: S
+                                            button(type="button").btn-edit
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M5.47816 14.2856H2.2853C2.13375 14.2856 1.9884 14.2254 1.88124 14.1182C1.77407 14.011 1.71387 13.8657 1.71387 13.7142V10.5213C1.71361 10.4471 1.72799 10.3736 1.75618 10.3049C1.78437 10.2363 1.82582 10.1739 1.87816 10.1213L10.4496 1.54987C10.5028 1.49588 10.5661 1.453 10.636 1.42373C10.7059 1.39447 10.7809 1.37939 10.8567 1.37939C10.9325 1.37939 11.0075 1.39447 11.0774 1.42373C11.1473 1.453 11.2107 1.49588 11.2639 1.54987L14.4496 4.73558C14.5036 4.78875 14.5465 4.85213 14.5757 4.92203C14.605 4.99193 14.6201 5.06695 14.6201 5.14272C14.6201 5.2185 14.605 5.29352 14.5757 5.36342C14.5465 5.43332 14.5036 5.4967 14.4496 5.54987L5.87816 14.1213C5.82556 14.1736 5.76315 14.2151 5.69452 14.2433C5.62588 14.2715 5.55236 14.2858 5.47816 14.2856V14.2856Z" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8.57129 3.42871L12.5713 7.42871" stroke="#0E86F4" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                span Edit
+                                td
+                                    input(type="number" value="2").main-form__input.main-form__input-number
+                                td
+                                    span.price 37,34 €
+                                td
+                                    span.price 75.48 €
+
+        .__sidebar
+            block sidebar
+                block modal
+                form(action="")#form_sample_address.dashboard__product__popup-content__review__sideblock
+                    .tabs.no-border
+                        a(href="").tab.active Billing Adress
+                    .dashboard__product__popup-content__content
+                        .main-form#billing_form
+                            .main-form__line
+                                input.main-form__input#billing_form_companyname(type="text" name="companyname" placeholder="Gottesshirt LLC." value="" required)
+                                label.main-form__lable(for="billing_form_companyname") Company / Store name
+                            .forminputs__wrapper.mailgrid
+                                .main-form__line
+                                    input.main-form__input#billing_form_email(type="email" name="email" placeholder="dima.shatunov@gmail.com" value="" required)
+                                    label.main-form__lable(for="billing_form_email") Email
+                                .main-form__line
+                                    input.main-form__input#billing_form_phone(type="tel" name="phone" placeholder="+49 9039580" value="" required)
+                                    label.main-form__lable(for="billing_form_phone") Phone
+                            .main-form__line
+                                input.main-form__input#billing_form_address1(type="text" name="address1" placeholder="Berlin, Deutsch Schtrazze, 61/B" value="")
+                                label.main-form__lable(for="billing_form_address1") Address 1
+                            .main-form__line
+                                input.main-form__input#billing_form_address2(type="text" name="address2" placeholder="Placeholder")
+                                label.main-form__lable(for="billing_form_address2") Address 2
+                            .forminputs__wrapper
+                                .main-form__line
+                                    input.main-form__input#billing_form_country(type="text" name="country" placeholder="Germany" value="")
+                                    label.main-form__lable(for="billing_form_country") Country
+                                .main-form__line
+                                    input.main-form__input#billing_form_state(type="text" name="state" placeholder="State" value="")
+                                    label.main-form__lable(for="billing_form_state") State
+                            .forminputs__wrapper
+                                .main-form__line
+                                    input.main-form__input#billing_form_city(type="text" name="city" placeholder="Berlin" value="")
+                                    label.main-form__lable(for="billing_form_city") City
+                                .main-form__line
+                                    input.main-form__input#billing_form_zip(type="text" name="zip" placeholder="44350" value="")
+                                    label.main-form__lable(for="billing_form_zip") Postal / ZIP Code
+                            .main-form__line
+                                label.main-form__lable.toggler-wrapper
+                                    span Use billing address as delivery address
+                                    <input class="toggler" type="checkbox" name="address" checked>
+
+                        #delivery_form(style="display:none")
+                            h5.form-title Delivery Address
+                            .main-form#billing_form
+                                .main-form__line
+                                    input.main-form__input#billing_form_companyname(type="text" name="companyname" placeholder="Gottesshirt LLC." value="" required)
+                                    label.main-form__lable(for="billing_form_companyname") Company / Store name
+                                .forminputs__wrapper.mailgrid
+                                    .main-form__line
+                                        input.main-form__input#billing_form_email(type="email" name="email" placeholder="dima.shatunov@gmail.com" value="" required)
+                                        label.main-form__lable(for="billing_form_email") Email
+                                    .main-form__line
+                                        input.main-form__input#billing_form_phone(type="tel" name="phone" placeholder="+49 9039580" value="" required)
+                                        label.main-form__lable(for="billing_form_phone") Phone
+                                .main-form__line
+                                    input.main-form__input#billing_form_address1(type="text" name="address1" placeholder="Berlin, Deutsch Schtrazze, 61/B" value="")
+                                    label.main-form__lable(for="billing_form_address1") Address 1
+                                .main-form__line
+                                    input.main-form__input#billing_form_address2(type="text" name="address2" placeholder="Placeholder")
+                                    label.main-form__lable(for="billing_form_address2") Address 2
+                                .forminputs__wrapper
+                                    .main-form__line
+                                        input.main-form__input#billing_form_country(type="text" name="country" placeholder="Germany" value="")
+                                        label.main-form__lable(for="billing_form_country") Country
+                                    .main-form__line
+                                        input.main-form__input#billing_form_state(type="text" name="state" placeholder="State" value="")
+                                        label.main-form__lable(for="billing_form_state") State
+                                .forminputs__wrapper
+                                    .main-form__line
+                                        input.main-form__input#billing_form_city(type="text" name="city" placeholder="Berlin" value="")
+                                        label.main-form__lable(for="billing_form_city") City
+                                    .main-form__line
+                                        input.main-form__input#billing_form_zip(type="text" name="zip" placeholder="44350" value="")
+                                        label.main-form__lable(for="billing_form_zip") Postal / ZIP Code
+
+                    .dashboard__product__popup-content__save-btns.btop
+                        button(type="submit" disabled).btn.-blue.-medium.btn--full Continue to place order
+                        button(type="button").btn.btn--white.btn--compact Back to product
+
+        block notify
+
+
+block scripts
+    script(src="js/loader.js")
+    script(src="js/just-validate.production.min.js")
+    script(src="js/dashboardproducts.js")
+    script(src="js/popupsetting.js")
+    script(src="js/popuptable.js")

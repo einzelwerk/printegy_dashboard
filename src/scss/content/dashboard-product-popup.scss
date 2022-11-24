@@ -651,6 +651,15 @@
                     }
                 }
             }
+            .tabs.no-border {
+                .tab {
+                    &.active {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
             .dashboard__product__popup-content__content {
                 padding: 24px;
                 .remove-desing {

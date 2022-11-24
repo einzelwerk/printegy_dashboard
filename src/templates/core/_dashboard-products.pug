@@ -3,8 +3,9 @@ include ../mixins/smallbtn
 
 block content
     .dashboard__products-head
-        h1.dashboard__title Products
-        button(type="button").btn.-blue.-medium Publish Products
+        block productshead
+            h1.dashboard__title Products
+            button(type="button").btn.-blue.-medium Publish Products
     .dashboard__productsblock-wrapper
         .dashboard__productsblock
             .dashboard__filters__block
