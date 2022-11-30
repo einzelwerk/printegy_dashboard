@@ -656,10 +656,15 @@ hr {
     align-items: center;
     gap: 12px;
     span {
+        font-family: 'Manrope-SemiBold', sans-serif;
         font-weight: 600;
         font-size: 14px;
         line-height: 20px;
         color: #19191A;
+    }
+    &.font-regular span {
+        font-family: 'Manrope-Regular', sans-serif;
+        font-weight: 400;
     }
     .toggler {
         margin-left: 0;

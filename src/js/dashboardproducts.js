@@ -53,7 +53,6 @@ if (addressblock) {
     togglerSenderAddress = addressblock.checked;
     let form = document.getElementById('form-sender-address');
     addressblock.addEventListener('change', event => {
-        console.log(event.target.checked);
         if (event.target.checked) {
             form.classList.add('hidden');
         } else {
@@ -78,7 +77,14 @@ let checkAddress = document.querySelector('#form_sample_address .toggler[name="a
 let deliveryForm = document.getElementById('delivery_form');
 if (checkAddress && deliveryForm) {
     checkAddress.addEventListener('change', event => {
+
         deliveryForm.style.display = (event.target.checked ? 'none' : 'block');
+
+        if (event.target.checked) {
+            event.target.parentElement.classList.remove('font-regular');
+        } else {
+            event.target.parentElement.classList.add('font-regular');
+        }
 
         if (!event.target.checked) {
             deliveryForm.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
@@ -89,7 +95,7 @@ if (checkAddress && deliveryForm) {
 let formSampleAddress = document.getElementById('form_sample_address');
 if (formSampleAddress) {
     formSampleAddress.addEventListener('change', () => {
-        console.log('changeFormSampleAddress');
+        // console.log('changeFormSampleAddress');
         let form = document.getElementById('billing_form');
         if (!checkAddress.checked) {
             form = document.getElementById('form_sample_address');

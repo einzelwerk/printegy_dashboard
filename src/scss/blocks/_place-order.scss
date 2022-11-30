@@ -65,28 +65,33 @@ body.place-order {
     border-top: 1px solid rgba(1, 24, 46, 0.12);
   }
   thead {
+    tr {
+      border-bottom: 1px solid rgba(1, 24, 46, 0.12);
+    }
     th {
+      font-family: 'Manrope-Semibold', sans-serif;
       font-weight: 600;
       font-size: 14px;
       line-height: 20px;
       color: #19191A;
       text-align: left;
-      width: 76px;
+      width: 80px;
     }
     th:first-child {
       margin-right: auto;
     }
     th:nth-of-type(2) {
-      width: 111px;
+      width: 115px;
     }
     th:nth-of-type(3) {
-      width: 96px;
+      width: 100px;
     }
   }
   tbody {
     td {
-      width: 76px;
+      width: 80px;
       .price {
+        font-family: 'Manrope-Medium', sans-serif;
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
@@ -99,10 +104,10 @@ body.place-order {
       margin-right: auto;
     }
     td:nth-of-type(2) {
-      width: 111px;
+      width: 115px;
     }
     td:nth-of-type(3) {
-      width: 96px;
+      width: 100px;
     }
   }
 }
@@ -111,7 +116,8 @@ body.place-order {
   display: flex;
   gap: 16px;
   h3 {
-    font-weight: 600;
+    font-family: 'Manrope-Medium', sans-serif;
+    font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 4px;
@@ -132,7 +138,8 @@ body.place-order {
       margin-top: auto;
       margin-bottom: 16px;
       span {
-        font-weight: 600;
+        font-family: 'Manrope-Medium', sans-serif;
+        font-weight: 500;
         font-size: 13px;
         line-height: 20px;
         color: #19191A;
@@ -145,6 +152,7 @@ body.place-order {
 .btn-edit {
   display: flex;
   align-items: center;
+  font-family: 'Manrope-SemiBold', sans-serif;
   font-weight: 600;
   font-size: 13px;
   line-height: 20px;
@@ -175,6 +183,7 @@ body.place-order {
     margin-bottom: 24px;
   }
   h3 {
+    font-family: 'Manrope-SemiBold', sans-serif;
     font-weight: 600;
     font-size: 18px;
     line-height: 28px;
@@ -187,6 +196,10 @@ body.place-order {
     line-height: 22px;
     color: #606266;
     margin-bottom: 24px;
+  }
+  span {
+    font-family: 'Manrope-Medium', sans-serif;
+    font-weight: 500;
   }
 }
 .show-modal ~ .dashboard__product__popup-content__review__sideblock {
@@ -209,6 +222,7 @@ body.place-order {
 }
 .sample-address .form-title {
   margin: 32px 0 20px;
+  font-family: 'Manrope-SemiBold', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
