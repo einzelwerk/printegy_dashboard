@@ -1,16 +1,11 @@
-html,
-body {
-  height: 100%;
-  background-color: $white;
-  min-width: 1024px;
-}
-html {
-  font-size: 16px;
-}
 body {
   font-family: $f-Manrope-Regular;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
+  height: 100%;
+  background-color: $white;
+  min-width: 1024px;
 }
 
 * {

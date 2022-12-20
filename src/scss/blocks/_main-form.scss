@@ -9,6 +9,18 @@
     &:hover label {
       color: #19191a;
     }
+    .forget {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #0E7DE2;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+  &__line-checkbox {
+    padding-top: 0;
   }
   &__lable {
     display: block;

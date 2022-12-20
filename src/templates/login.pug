@@ -1,7 +1,10 @@
 extends core/_template
 
 block title
-	title Главная
+	title Login
+
+block body
+	body.page-adaptive
 
 block content
 	.main
@@ -15,14 +18,15 @@ block content
 				h1.main__content-title Hey, Welcome to Printegy
 				p.main__content-text Your new Shopify experience is starting here. Welcome on board!
 
-				form.main-form#login_form(action="") 
+				form.main-form#login_form(action="")
 					.main-form__line
 						input.main-form__input#login_form_name(type="text" placeholder="Username / E-mail" required)
 						label.main-form__lable(for="login_form_name") Login
 					.main-form__line
+						a(href="#").forget Forget your password?
 						input.main-form__input#login_form_password(type="password" placeholder="***********************" required)
-						label.main-form__lable(for="login_form_password") Password
-					.main-form__line
+						label.main-form__lable(for="login_form_password") fhghgh
+					.main-form__line.main-form__line-checkbox
 						.checkbox
 							input.checkbox__input#remember_checkbox(type="checkbox")
 							label.checkbox__label(for="remember_checkbox") Remember this device for 30 <days></days>
@@ -32,7 +36,7 @@ block content
 			.main__content-bottom
 				.main__note Still don’t have our app? 
 					a(href="#").main__note-link Get it right here
-				.main__note
+				.main__note.forget
 					a(href="#").main__note-link Forget your password?
 
 		.main__preview
