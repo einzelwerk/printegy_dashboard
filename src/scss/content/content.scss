@@ -2343,21 +2343,19 @@ hr {
 
 .dashboardemty__start__desc {
     padding: 32px 0;
-    width: 540px;
-    //margin-right: 160px;
-    //@media (max-width: 1300px) {
-    //    margin-right: 16px;
-    //}
     .text {
         font-weight: 400;
         font-size: 15px;
         line-height: 22px;
         color: #606266;
+        width: 530px;
     }
     .btn {
         margin-top: 16px;
-        padding: 12px 29px;
+        padding: 13px 28px;
         margin-right: 8px;
+        height: 40px;
+        width: 180px;
     }
 }
 

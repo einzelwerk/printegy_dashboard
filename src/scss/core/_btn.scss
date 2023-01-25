@@ -32,6 +32,13 @@
             background-color: darken(#0e86f4, 3%);
         }
     }
+    &--green {
+        background-color: #1FB46C;
+        color: white;
+        &:hover {
+            background-color: darken(#1FB46C, 3%);
+        }
+    }
     &--lightblue {
         background-color: rgba(14, 134, 244, 0.12);
         color: #0E7DE2;

@@ -1,8 +1,11 @@
 .dashboard__product__popup-content__review__sideblock
-    .tabs
-        a(href="").tab Product Design
-        a(href="").tab.active Settings & Variants
-        a(href="").tab Shipping & Pricing
+    .tabs.swiper
+        .swiper-wrapper
+            a(href="").tab.swiper-slide Product Design
+            a(href="").tab.swiper-slide.active Settings & Variants
+            a(href="").tab.swiper-slide Shipping & Pricing
+            a(href="").tab.swiper-slide Mockups
+            a(href="").tab.swiper-slide
     .dashboard__product__popup-content__content
         .image-options
             p.desc.p13-400 Available models
@@ -27,39 +30,48 @@
             .__settingblock.stm
                 .title.p13-400 Material
                 .__settingitems.stm16
-                    .__item.active
+                    label.__item
+                        input(name="material" type="radio" value="000" checked)
                         .value.p14-600 Matte
-                    .__item
+                    label.__item
+                        input(name="material" type="radio" value="White & Black")
                         .value.p14-600 White & Black
-                    .__item
+                    label.__item
+                        input(name="material" type="radio" value="Gloss")
                         .value.p14-600 Gloss
             .__settingblock.stm
                 .title.p13-400 Color
-                .__settingitems.stm16
-                    label.__item
-                        input(name="color" type="radio" value="000" checked)
-                        .value
+                .__settingitems.stm16.colors
+                    .__item
+                        .value.active
                             span.color(style="background: #000" )
-                    label.__item
-                        input(name="color" type="radio" value="558240")
+                            label
+                                input(name="color" type="checkbox" value="000" checked)
+                    .__item
                         .value
                             span.color(style="background: #558240" )
-                    label.__item
-                        input(name="color" type="radio" value="EF5353")
+                            label
+                                input(name="color" type="checkbox" value="558240")
+                    .__item
                         .value
                             span.color(style="background: #EF5353" )
-                    label.__item
-                        input(name="color" type="radio" value="0267FF")
+                            label
+                                input(name="color" type="checkbox" value="EF5353")
+                    .__item
                         .value
                             span.color(style="background: #0267FF" )
-                    label.__item
-                        input(name="color" type="radio" value="fff")
+                            label
+                                input(name="color" type="checkbox" value="0267FF")
+                    .__item
                         .value
                             span.color(style="background: #fff; border: 1px solid rgba(1, 24, 46, 0.12);" )
-                    label.__item
-                        input(name="color" type="radio" value="2D87A4")
+                            label
+                                input(name="color" type="checkbox" value="fff")
+                    .__item
                         .value
                             span.color(style="background: #2D87A4" )
+                            label
+                                input(name="color" type="checkbox" value="2D87A4")
                 .__titledescription__wrapper.stm
                     p.desc.p13-400 Size
                     button.__editbtn.pricetablebtn(type="button")

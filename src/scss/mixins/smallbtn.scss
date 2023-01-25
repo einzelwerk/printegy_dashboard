@@ -12,6 +12,9 @@
     cursor: pointer;
     &:hover {
         border: $borderinputhover;
+        svg path {
+            stroke: #0E86F4
+        }
     }
     &.active {
         background: linear-gradient(0deg, rgba(14, 134, 244, 0.12), rgba(14, 134, 244, 0.12));

@@ -29,8 +29,6 @@ if (toggleElems.length) {
     });
 }
 
-
-
 // Payments
 let payments = document.querySelectorAll('input[name="payment"]');
 if (payments.length) {
@@ -116,3 +114,38 @@ if (formSampleAddress) {
         }
     });
 }
+
+// Checkbox color
+const colorsParent = document.querySelector('.image-options__settingitems.colors');
+if (colorsParent) {
+    const colors = colorsParent.querySelectorAll('.value');
+    colorsParent.addEventListener('click', event => {
+        if ([...event.target.classList].includes('color')) {
+            colors.forEach(item => item.classList.remove('active'));
+            event.target.closest('.value').classList.add('active');
+        }
+    })
+}
+
+// Menu
+const elSwiper = document.querySelector('.tabs.swiper');
+if (elSwiper) {
+    let activeIndex = 0;
+    let slides = elSwiper.querySelectorAll('.swiper-slide');
+    slides.forEach((slide,index) => {
+        if ([...slide.classList].includes('active')) {
+            console.log(index);
+            activeIndex = index;
+        }
+    });
+    const slider = new Swiper(elSwiper, {
+        slidesPerView: 'auto',
+        spaceBetween: 25,
+        on: {
+            init: function (swiper) {
+                swiper.slideTo(activeIndex,0);
+            },
+        },
+    });
+}
+
