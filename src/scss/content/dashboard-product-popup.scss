@@ -621,10 +621,12 @@
     &.pricepage {
         .tabs {
             background: $white;
+            overflow-y: auto;
         }
     }
     .tabs {
         padding: 24px 24px 0;
+        width: 100%;
         @include flexbetween;
         border-bottom: $borderinput;
         gap: 25px;
