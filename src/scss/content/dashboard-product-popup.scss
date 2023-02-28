@@ -137,6 +137,7 @@
 .dashboard__product__popup-content {
     display: flex;
     align-items: flex-start;
+    gap: 32px;
     &.design {
         align-items: start;
     }
@@ -493,7 +494,8 @@
 
 // third step
 .dashboard__product__popup-content__reviewblock {
-    width: 60%;
+    width: 58%;
+    //flex: 1 0 auto;
     .dashboard__product__popup-content__main {
         position: relative;
         .titleblock {
@@ -514,6 +516,26 @@
             position: relative;
             margin-top: 20px;
             @include flexcenter;
+            .mockup-preview {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+                color: #19191A;
+                background: #FFFFFF;
+                border-radius: 4px;
+                padding: 6px 10px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        .mainimg-block--big {
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
         .mainimg-block__side__btns {
             position: absolute;
@@ -557,7 +579,12 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             @media (max-width: 1399px) {
-                grid-template-columns: repeat(auto-fill, 205px);
+                grid-template-columns: repeat(2,1fr);
+                //grid-template-columns: repeat(auto-fill, 205px);
+            }
+            @media (max-width: 1199px) {
+                grid-template-columns: repeat(1,1fr);
+                //grid-template-columns: repeat(auto-fill, 205px);
             }
             .thumb__elem {
                 background: $white;
@@ -575,6 +602,10 @@
                 }
                 .thumb__elem__top {
                     @include flexcenter;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
                 }
                 .title {
                     font-weight: 600;
@@ -606,8 +637,7 @@
 
 .dashboard__product__popup-content__review__sideblock {
     margin-top: 35px;
-    width: 40%;
-    margin-left: 30px;
+    flex: 0 1 auto;
     background: $white;
     border: $borderinput;
     border-radius: $br4;
@@ -615,9 +645,8 @@
     flex-direction: column;
     justify-content: flex-start;
     overflow-x: hidden;
-    // height: calc(100vh - 130px);
-    // position: fixed;
-    // right: 40px;
+    width: 42%;
+    min-width: 460px;
     &.pricepage {
         .tabs {
             background: $white;
