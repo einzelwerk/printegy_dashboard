@@ -42,7 +42,7 @@ function html() {
 function css() {
     return src(`${src_path}/scss/style.scss`)
         .pipe(
-            sass().on('error', function(error) {
+            sass().on('error', function (error) {
                 console.log(error);
             })
         )
@@ -102,9 +102,15 @@ function fonts() {
 
 function server() {
     browserSync.init({
-        server: dest_path,
-        browser: 'chrome',
-        notify: false,
+
+        server: {
+            baseDir: 'build',
+        },
+        port: 8080,
+        open: true,
+        notify: false
+
+
     });
 }
 
